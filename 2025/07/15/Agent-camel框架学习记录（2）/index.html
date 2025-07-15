@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="2.3.3 使用开源模型：OllamaOllama 是一个开源机器学习框架，专注于让用户轻松使用语言模型。它基于 llama.cpp 实现，支持 CPU&#x2F;GPU 推理，并兼容 OpenAI 接口。 安装与使用 Qwen2.51ollama pull qwen2.5:7b  模型加载方式： 12345678from camel.models import ModelFactoryfrom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agent_camel框架学习记录（2）">
+<meta property="og:url" content="http://example.com/2025/07/15/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/index.html">
+<meta property="og:site_name" content="_010001SUTANG_">
+<meta property="og:description" content="2.3.3 使用开源模型：OllamaOllama 是一个开源机器学习框架，专注于让用户轻松使用语言模型。它基于 llama.cpp 实现，支持 CPU&#x2F;GPU 推理，并兼容 OpenAI 接口。 安装与使用 Qwen2.51ollama pull qwen2.5:7b  模型加载方式： 12345678from camel.models import ModelFactoryfrom">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%5C%E5%9B%BE%E7%89%87%E7%A4%BA%E4%BE%8B01.jpg">
+<meta property="article:published_time" content="2025-07-15T05:09:52.000Z">
+<meta property="article:modified_time" content="2025-07-15T15:39:35.995Z">
+<meta property="article:author" content="Su Tang">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="CAMEL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%5C%E5%9B%BE%E7%89%87%E7%A4%BA%E4%BE%8B01.jpg">
+
+
+<link rel="canonical" href="http://example.com/2025/07/15/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/07/15/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/","path":"2025/07/15/Agent-camel框架学习记录（2）/","title":"Agent_camel框架学习记录（2）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Agent_camel框架学习记录（2） | _010001SUTANG_</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">_010001SUTANG_</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">To ancient evenings and distant music.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-3-%E4%BD%BF%E7%94%A8%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B%EF%BC%9AOllama"><span class="nav-number">1.</span> <span class="nav-text">2.3.3 使用开源模型：Ollama</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8-Qwen2-5"><span class="nav-number">1.1.</span> <span class="nav-text">安装与使用 Qwen2.5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-3-BaseMessage-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">2.4.3 BaseMessage 消息处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-4-%E4%B8%8E-ChatAgent-%E5%8D%8F%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">2.4.4 与 ChatAgent 协作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-3-%E4%B8%8A%E4%B8%8B%E6%96%87%E5%AD%A6%E4%B9%A0-ICL"><span class="nav-number">4.</span> <span class="nav-text">2.5.3 上下文学习 (ICL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-4-%E6%80%9D%E7%BB%B4%E9%93%BE-CoT"><span class="nav-number">5.</span> <span class="nav-text">2.5.4 思维链 (CoT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-5-%E4%BD%BF%E7%94%A8-CAMEL-%E7%9A%84-Prompt"><span class="nav-number">6.</span> <span class="nav-text">2.5.5 使用 CAMEL 的 Prompt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6Memory%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">7.</span> <span class="nav-text">2.6Memory记忆系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Tools-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F"><span class="nav-number">8.</span> <span class="nav-text">2.7 Tools 工具系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-1-%E5%B7%A5%E5%85%B7%E8%AF%B4%E6%98%8E"><span class="nav-number">8.1.</span> <span class="nav-text">2.7.1 工具说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-2-%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5"><span class="nav-number">8.2.</span> <span class="nav-text">2.7.2 动手实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-3-%E8%BF%9B%E9%98%B6%E6%A1%88%E4%BE%8B%EF%BC%9AAI-Society-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F"><span class="nav-number">8.3.</span> <span class="nav-text">2.7.3 进阶案例：AI Society + 工具系统</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Su Tang</p>
+  <div class="site-description" itemprop="description">nothing is anything</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/15/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Agent_camel框架学习记录（2） | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Agent_camel框架学习记录（2）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-07-15 13:09:52 / Modified: 23:39:35" itemprop="dateCreated datePublished" datetime="2025-07-15T13:09:52+08:00">2025-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
+<h2 id="2-3-3-使用开源模型：Ollama"><a href="#2-3-3-使用开源模型：Ollama" class="headerlink" title="2.3.3 使用开源模型：Ollama"></a>2.3.3 使用开源模型：Ollama</h2><p>Ollama 是一个开源机器学习框架，专注于让用户轻松使用语言模型。它基于 <code>llama.cpp</code> 实现，支持 CPU&#x2F;GPU 推理，并兼容 OpenAI 接口。</p>
+<h3 id="安装与使用-Qwen2-5"><a href="#安装与使用-Qwen2-5" class="headerlink" title="安装与使用 Qwen2.5"></a>安装与使用 Qwen2.5</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama pull qwen2.5:7b</span><br></pre></td></tr></table></figure>
+
+<p>模型加载方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OLLAMA,</span><br><span class="line">    model_type=<span class="string">&quot;qwen2.5&quot;</span>,</span><br><span class="line">    model_config_dict=&#123;<span class="string">&quot;temperature&quot;</span>: <span class="number">0.4</span>&#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>自行构建的qwen2.5:7b模型下的多行问答Agent:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> camel.messages <span class="keyword">import</span> BaseMessage</span><br><span class="line"></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OLLAMA,</span><br><span class="line">    model_type=<span class="string">&quot;qwen2.5:7b&quot;</span>,  <span class="comment"># Use the model name displayed in &#x27;ollama list&#x27;</span></span><br><span class="line">    model_config_dict=&#123;</span><br><span class="line">        <span class="string">&quot;temperature&quot;</span>: <span class="number">0.4</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    url=<span class="string">&quot;http://localhost:11434/v1/&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">agent = ChatAgent(</span><br><span class="line">    model=model,</span><br><span class="line">    output_language=<span class="string">&#x27;中文&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;与 CAMEL 代理开始对话 (输入 &#x27;退出&#x27; 结束):&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;你: (输入多行内容，空行结束)&quot;</span>)</span><br><span class="line">    user_input_lines = []</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        line = <span class="built_in">input</span>()</span><br><span class="line">        <span class="keyword">if</span> line.lower() == <span class="string">&#x27;退出&#x27;</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;对话结束。&quot;</span>)</span><br><span class="line">            sys.exit()  <span class="comment"># 完全退出程序</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> line.strip():  <span class="comment"># 空行结束输入</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        user_input_lines.append(line)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> user_input_lines:  <span class="comment"># 如果有输入内容</span></span><br><span class="line">        user_input = <span class="string">&#x27;\n&#x27;</span>.join(user_input_lines)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">continue</span>  <span class="comment"># 空输入则重新开始循环</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a BaseMessage from user input</span></span><br><span class="line">    user_msg = BaseMessage.make_user_message(</span><br><span class="line">        role_name=<span class="string">&quot;User&quot;</span>,</span><br><span class="line">        content=user_input</span><br><span class="line">    )   </span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get model response</span></span><br><span class="line">    response = agent.step(user_msg)</span><br><span class="line">    <span class="keyword">if</span> response <span class="keyword">and</span> response.msgs:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;代理: <span class="subst">&#123;response.msgs[<span class="number">0</span>].content&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;代理: 未收到有效回复。&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-4-3-BaseMessage-消息处理"><a href="#2-4-3-BaseMessage-消息处理" class="headerlink" title="2.4.3 BaseMessage 消息处理"></a>2.4.3 BaseMessage 消息处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.messages <span class="keyword">import</span> BaseMessage</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建消息</span></span><br><span class="line">user_msg = BaseMessage.make_user_message(role_name=<span class="string">&quot;User_1&quot;</span>, content=<span class="string">&quot;Hi&quot;</span>)</span><br><span class="line">assistant_msg = BaseMessage.make_assistant_message(role_name=<span class="string">&quot;Assistant_1&quot;</span>, content=<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新消息内容</span></span><br><span class="line">updated_msg = user_msg.create_new_instance(<span class="string">&quot;Hi, tell me more about CAMEL&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为 OpenAI 消息格式</span></span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> OpenAIBackendRole</span><br><span class="line">openai_msg = user_msg.to_openai_message(role_at_backend=OpenAIBackendRole.USER)</span><br></pre></td></tr></table></figure>
+<p>通过BassMessage实现Agent处理图片&#x2F;视频等多模态信息：<br>首先展示本地图片的多模态理解示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"><span class="keyword">from</span> camel.messages <span class="keyword">import</span> BaseMessage</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载环境变量</span></span><br><span class="line">load_dotenv(dotenv_path=<span class="string">&#x27;.env&#x27;</span>)  <span class="comment"># 确保.env文件存在且路径正确</span></span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)  <span class="comment"># 使用环境变量获取密钥</span></span><br><span class="line"></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-VL-72B-Instruct&quot;</span>,</span><br><span class="line">    api_key=api_key,</span><br><span class="line">    url=os.environ.get(<span class="string">&quot;OPENAI_COMPATIBILIY_API_BASE_URL&quot;</span>, <span class="string">&quot;https://api-inference.modelscope.cn/v1/&quot;</span>),  <span class="comment"># 环境变量优先，不存在则使用默认值</span></span><br><span class="line">    model_config_dict=&#123;<span class="string">&quot;temperature&quot;</span>: <span class="number">0.4</span>, <span class="string">&quot;max_tokens&quot;</span>: <span class="number">4096</span>&#125;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化ChatAgent</span></span><br><span class="line">agent = ChatAgent(model=model,output_language=<span class="string">&#x27;中文&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地图片</span></span><br><span class="line">image_path = <span class="string">&quot;微信图片_2025-07-11_223853_723.jpg&quot;</span></span><br><span class="line">img = Image.<span class="built_in">open</span>(image_path)  <span class="comment"># 直接打开图片文件</span></span><br><span class="line"></span><br><span class="line">user_msg = BaseMessage.make_user_message(</span><br><span class="line">    role_name=<span class="string">&quot;User&quot;</span>, </span><br><span class="line">    content=<span class="string">&quot;请描述这张图片的内容&quot;</span>, </span><br><span class="line">    image_list=[img]  <span class="comment"># 使用image_list参数传入PIL.Image对象列表</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">response = agent.step(user_msg)   <span class="comment"># 1. 将包含图片的用户消息发送给AI代理</span></span><br><span class="line"><span class="built_in">print</span>(response.msgs[<span class="number">0</span>].content)  <span class="comment"># 2. 打印AI代理的回复内容</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%5C%E5%9B%BE%E7%89%87%E7%A4%BA%E4%BE%8B01.jpg" alt="图片示例"></p>
+<p>以上的图片示例运行后的结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Camel_Test_Project&gt; &amp; D:/Download/Python/py-3.11.9/python.exe d:/Camel_Test_Project/Multimodal_images.py      </span><br><span class="line">这张图片显示了一位正在打羽毛球的人。他穿着黑色的T恤和红色的短裤，脚上穿着白色的运动鞋。他的右手持着羽毛球拍，似乎在准备击球或刚刚完成一次击球动作。背景是一个室内羽毛球场地，可以看到彩色的观 众席和一些放置在地上的物品，如背包和鞋子。场地的地面是绿色的，标有白色的线条，用于划分比赛区域</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-4-与-ChatAgent-协作"><a href="#2-4-4-与-ChatAgent-协作" class="headerlink" title="2.4.4 与 ChatAgent 协作"></a>2.4.4 与 ChatAgent 协作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line">chat_agent = ChatAgent(model=model, system_message=<span class="string">&quot;You are a helpful assistant&quot;</span>, output_language=<span class="string">&#x27;zh&#x27;</span>)</span><br><span class="line">response = chat_agent.step(<span class="string">&quot;介绍一下 CAMEL AI&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.msgs[<span class="number">0</span>].content)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-3-上下文学习-ICL"><a href="#2-5-3-上下文学习-ICL" class="headerlink" title="2.5.3 上下文学习 (ICL)"></a>2.5.3 上下文学习 (ICL)</h2><p>ICL 通过上下文中的示例（Few-shot&#x2F;One-shot&#x2F;Zero-shot）指导模型生成答案。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">英文转法文任务示例：</span><br><span class="line">Translate English to French.</span><br><span class="line">apple -&gt; pomme</span><br><span class="line">car -&gt; voiture</span><br><span class="line">cat -&gt; chat</span><br><span class="line">dog -&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-4-思维链-CoT"><a href="#2-5-4-思维链-CoT" class="headerlink" title="2.5.4 思维链 (CoT)"></a>2.5.4 思维链 (CoT)</h2><p>通过逐步展示推理过程提升模型表现：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Q: Roger 有 5 个网球，他又买了 2 罐，每罐 3 个，共多少？</span><br><span class="line">A: 他有 5 + 2*3 = 11 个网球。</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-5-使用-CAMEL-的-Prompt"><a href="#2-5-5-使用-CAMEL-的-Prompt" class="headerlink" title="2.5.5 使用 CAMEL 的 Prompt"></a>2.5.5 使用 CAMEL 的 Prompt</h2><p>使用 TaskSpecifyAgent 创建特定任务提示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> TaskSpecifyAgent</span><br><span class="line"></span><br><span class="line">task_specify_agent = TaskSpecifyAgent(</span><br><span class="line">    model=model, task_type=TaskType.AI_SOCIETY, output_language=<span class="string">&#x27;中文&#x27;</span></span><br><span class="line">)</span><br><span class="line">response = task_specify_agent.run(</span><br><span class="line">    task_prompt=<span class="string">&quot;get promotion&quot;</span>,</span><br><span class="line">    meta_dict=<span class="built_in">dict</span>(assistant_role=<span class="string">&quot;Engineer&quot;</span>, user_role=<span class="string">&quot;Employee&quot;</span>, word_limit=<span class="number">100</span>)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(response)</span><br></pre></td></tr></table></figure>
+
+<p>使用 TextPrompt 自定义模板：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.prompts <span class="keyword">import</span> TextPrompt</span><br><span class="line">prompt = TextPrompt(<span class="string">&#x27;Hi &#123;name&#125;, you are &#123;age&#125; years old.&#x27;</span>)</span><br><span class="line">formatted = prompt.<span class="built_in">format</span>(name=<span class="string">&quot;John&quot;</span>, age=<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(formatted)  <span class="comment"># Hi John, you are 30 years old.</span></span><br></pre></td></tr></table></figure>
+
+<p>更多见官方文档：<a target="_blank" rel="noopener" href="https://github.com/camel-ai/camel">https://github.com/camel-ai/camel</a></p>
+<h2 id="2-6Memory记忆系统"><a href="#2-6Memory记忆系统" class="headerlink" title="2.6Memory记忆系统"></a>2.6Memory记忆系统</h2><p>CAMEL AI 记忆系统集成操作流程</p>
+<ol>
+<li>理论基础<br>1.1 CAMEL 记忆存储机制</li>
+</ol>
+<p>Key-Value 存储: 简单键值对存储，适合结构化数据<br>Graph 存储: 图数据库存储，适合关系型数据<br>Vector 存储: 向量数据库存储，适合语义检索</p>
+<p>1.2 核心数据结构</p>
+<p>Chat_history: 规范化存储智能体对话记录<br>Context: 从 chat_history 中提取的上下文信息<br>权重机制: 基于重要性评分筛选关键信息</p>
+<p>1.3 工作原理<br>大模型基于预测机制生成文本，通过权重筛选从历史记录中获取有效上下文，确保在 token 限制内提供最重要的信息。<br>2. 环境准备以及记忆系统构建初始化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.memories <span class="keyword">import</span> (</span><br><span class="line">    LongtermAgentMemory,<span class="comment">#核心记忆管理器，负责存储和检索对话历史</span></span><br><span class="line">    MemoryRecord,</span><br><span class="line">    ScoreBasedContextCreator,<span class="comment">#基于评分的上下文创建器</span></span><br><span class="line">    ChatHistoryBlock,<span class="comment">#存储聊天历史记录的数据块</span></span><br><span class="line">    VectorDBBlock,<span class="comment">#向量数据库块</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">#载入基础配置</span></span><br><span class="line"><span class="keyword">from</span> camel.messages <span class="keyword">import</span> BaseMessage</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelType, OpenAIBackendRole</span><br><span class="line"><span class="keyword">from</span> camel.utils <span class="keyword">import</span> OpenAITokenCounter</span><br><span class="line"><span class="keyword">from</span> camel.embeddings <span class="keyword">import</span> SentenceTransformerEncoder</span><br><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"></span><br><span class="line"><span class="comment">#载入环境配置</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line">load_dotenv()</span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化记忆系统</span></span><br><span class="line">memory = LongtermAgentMemory(</span><br><span class="line">    context_creator=ScoreBasedContextCreator(</span><br><span class="line">        token_counter=OpenAITokenCounter(ModelType.GPT_4O_MINI),</span><br><span class="line">        token_limit=<span class="number">1024</span>,  <span class="comment"># 使用 token 计数器限制上下文长度（1024 tokens）</span></span><br><span class="line">    ),</span><br><span class="line">    chat_history_block=ChatHistoryBlock(),  <span class="comment"># 聊天历史存储</span></span><br><span class="line">    vector_db_block=VectorDBBlock(</span><br><span class="line">        embedding=SentenceTransformerEncoder(model_name=<span class="string">&quot;BAAI/bge-m3&quot;</span>)</span><br><span class="line">    ),  <span class="comment"># 向量数据库存储，使用 BGE-M3 模型进行文本嵌入</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建记忆记录</span></span><br><span class="line">records = [</span><br><span class="line">    MemoryRecord(</span><br><span class="line">        message=BaseMessage.make_user_message(</span><br><span class="line">            role_name=<span class="string">&quot;User&quot;</span>,</span><br><span class="line">            content=<span class="string">&quot;什么是CAMEL AI?&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        role_at_backend=OpenAIBackendRole.USER,</span><br><span class="line">    ),</span><br><span class="line">    MemoryRecord(</span><br><span class="line">        message=BaseMessage.make_assistant_message(</span><br><span class="line">            role_name=<span class="string">&quot;Agent&quot;</span>,</span><br><span class="line">            content=<span class="string">&quot;CAMEL-AI是第一个LLM多智能体框架,并且是一个致力于寻找智能体 scaling law 的开源社区。&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        role_at_backend=OpenAIBackendRole.ASSISTANT,</span><br><span class="line">    ),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">#写入记忆数据</span></span><br><span class="line">memory.write_records(records)</span><br><span class="line"></span><br><span class="line"><span class="comment">#验证记忆系统</span></span><br><span class="line">context, token_count = memory.get_context()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;上下文: <span class="subst">&#123;context&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Token 消耗: <span class="subst">&#123;token_count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">###创建基础智能体</span></span><br><span class="line"><span class="comment"># 定义系统消息</span></span><br><span class="line">sys_msg = <span class="string">&quot;你是一个好奇的智能体，正在探索宇宙的奥秘。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化模型</span></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-72B-Instruct&quot;</span>,</span><br><span class="line">    url=<span class="string">&#x27;https://api-inference.modelscope.cn/v1/&#x27;</span>,</span><br><span class="line">    api_key=api_key</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建智能体</span></span><br><span class="line">agent = ChatAgent(system_message=sys_msg, model=model)</span><br><span class="line"></span><br><span class="line"><span class="comment">###测试无记忆状态</span></span><br><span class="line">usr_msg = <span class="string">&quot;告诉我基于我们讨论的内容，哪个是第一个LLM多智能体框架？&quot;</span></span><br><span class="line">response = agent.step(usr_msg)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;无记忆状态响应:&quot;</span>, response.msgs[<span class="number">0</span>].content)</span><br></pre></td></tr></table></figure>
+<p>关键组件说明:<br>ScoreBasedContextCreator: 基于评分的上下文创建器<br>ChatHistoryBlock: 聊天记录存储块<br>VectorDBBlock: 向量数据库块，支持语义检索</p>
+<ol start="3">
+<li>测试无记忆状态的输出结果</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Camel_Test_Project&gt; &amp; D:/Download/Python/py-3.11.9/python.exe d:/Camel_Test_Project/test_Memory_all.py</span><br><span class="line">W0715 11:51:47.852000 17616 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported <span class="keyword">in</span> Windows or MacOs.</span><br><span class="line">上下文: [&#123;<span class="string">&#x27;role&#x27;</span>: <span class="string">&#x27;user&#x27;</span>, <span class="string">&#x27;content&#x27;</span>: <span class="string">&#x27;什么是CAMEL AI?&#x27;</span>&#125;, &#123;<span class="string">&#x27;role&#x27;</span>: <span class="string">&#x27;assistant&#x27;</span>, <span class="string">&#x27;content&#x27;</span>: <span class="string">&#x27;CAMEL-AI是第一个LLM多智能体框架,并且是一个致力于寻找智能体 scaling law 的开源社区。&#x27;</span>&#125;]</span><br><span class="line">Token 消耗: 52</span><br><span class="line">无记忆状态响应: 目前，关于“第一个LLM（大语言模型）多智能体框架”的确切定义和时间点可能存在一定的模糊性，因为这一领域的发展非常迅速，而且不同的项目和研究可能从不同的角度来定义“多智能体框架”。 然而，可以提到一些较早的、具有代表性的项目，它们在大语言模型与多智能体系统结合方面进行了开创性的工作。</span><br><span class="line"></span><br><span class="line"> **Multi-Agent Systems with Large Language Models (LLMs)**: 虽然很难确定一个具体的“第一”，但 可以指出的是，随着大语言模型如GPT-3等的出现，研究人员开始探索将这些模型应用于多智能体系统中。例如，2021年左右，一些研究团队开始尝试使用大语言模型作为智能体之间的通信工具，或者作为增强单个智 能体决策能力的方法。</span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能 体之间进行更有效的沟通与合作，被认为是该领域的早期重要贡献之一。</span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能 </span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的</span><br><span class="line">**ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能 </span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的</span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能 体之间进行更有效的沟通与合作，被认为是该领域的早期重要贡献之一。</span><br><span class="line"> **ReAct <span class="keyword">for</span> Multi-Agent Collaboration**: 2022年，来自斯坦福大学的研究者提出了一种名为ReAct的方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能 体之间进行更有效的沟通与合作，被认为是该领域的早期重要贡献之一。</span><br><span class="line">方法，它利用大型预训练语言模型来促进多智能体协作。这个框架展示了如何通过自然语言处理技术让智能体之间进行更有效的沟通与合作，被认为是该领域的早期重要贡献之一。</span><br><span class="line"></span><br><span class="line">需要注意的是，上述信息基于当前可获得的数据，并且随着新研究的不断涌现，这一领域的先驱者可能会有 所变化。如果你有特定的研究或项目想要了解，请提供更多信息，我将尽力为你提供详细的答案。</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>记忆系统集成<br>4.1 集成记忆到智能体<br>python# 关键步骤：将记忆系统赋值给智能体<br>agent.memory &#x3D; memory<br>4.2 测试集成效果<br>python# 使用相同的问题测试<br>response &#x3D; agent.step(usr_msg)<br>print(“集成记忆后响应:”, response.msgs[0].content)</li>
+</ol>
+<p>5.测试结果，成功响应：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">集成记忆后响应: CAMEL-AI 是一个专注于研究和开发大规模语言模型（LLM）在多智能体系统中应用的框架 。它旨在通过构建和实验不同的多智能体交互模式，来探索和理解智能体之间的协作、竞争以及这些互动如 何影响整体系统的性能和效率。根据您的问题，CAMEL-AI 被认为是第一个LLM多智能体框架。这个框架不仅 促进了对智能体 scaling law 的研究，还为研究人员和开发者提供了一个开放平台，以测试新的算法和理论。</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-7-Tools-工具系统"><a href="#2-7-Tools-工具系统" class="headerlink" title="2.7 Tools 工具系统"></a>2.7 Tools 工具系统</h2><h3 id="2-7-1-工具说明"><a href="#2-7-1-工具说明" class="headerlink" title="2.7.1 工具说明"></a>2.7.1 工具说明</h3><p>工具（Tools）是大语言模型（LLM）与外部世界交互的桥梁。虽然 LLM 拥有强大的语言理解与生成能力，但它本质上是一个“封闭系统”，无法直接：</p>
+<ul>
+<li>获取实时信息（如天气、新闻）</li>
+<li>访问外部数据（如数据库、文件）</li>
+<li>执行具体操作（如发送邮件、控制设备）</li>
+</ul>
+<p>为克服这些局限，CAMEL 提供了“工具”机制，使模型能够：</p>
+<ul>
+<li>通过 API 获取实时数据</li>
+<li>调用外部服务</li>
+<li>执行特定任务</li>
+<li>与其他系统交互</li>
+</ul>
+<blockquote>
+<p>✅ 工具的本质是一个带有名称、描述、输入参数与输出类型的 <strong>函数接口</strong>。</p>
+</blockquote>
+<p>CAMEL 支持：</p>
+<ul>
+<li><strong>内置工具</strong></li>
+<li><strong>自定义工具</strong></li>
+<li><strong>工具包（Toolkit）</strong></li>
+</ul>
+<h3 id="2-7-2-动手实践"><a href="#2-7-2-动手实践" class="headerlink" title="2.7.2 动手实践"></a>2.7.2 动手实践</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"></span><br><span class="line">load_dotenv()</span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化模型</span></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-72B-Instruct&quot;</span>,</span><br><span class="line">    url=<span class="string">&#x27;https://api-inference.modelscope.cn/v1/&#x27;</span>,</span><br><span class="line">    api_key=api_key</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化 ChatAgent（未配工具）</span></span><br><span class="line">agent = ChatAgent(</span><br><span class="line">    system_message=<span class="string">&quot;你是一个数学大师，擅长各种数学问题。&quot;</span>,</span><br><span class="line">    model=model,</span><br><span class="line">    output_language=<span class="string">&#x27;中文&#x27;</span>,</span><br><span class="line">    tools=[]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义用户消息发送消息给agent</span></span><br><span class="line">usr_msg = <span class="string">&quot;2的平方根是多少？&quot;</span></span><br><span class="line">response = agent.step(usr_msg)</span><br><span class="line"><span class="built_in">print</span>(response.msgs[<span class="number">0</span>].content)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出约为：<code>2的平方根是 1.414</code></p>
+</blockquote>
+<p>可以看到模型给出了回答，但是精度不够。我们需要更高的精度，现在创建自定义函数工具：</p>
+<p>使用<code>FunctionTool</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.toolkits <span class="keyword">import</span> FunctionTool</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_sqrt</span>(<span class="params">x: <span class="built_in">float</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">     <span class="string">r&quot;&quot;&quot;计算一个数的平方根。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        x (float): 需要计算平方根的数字。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        float: 输入数字的平方根。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用 FunctionTool 包装该函数</span></span><br><span class="line">sqrt_tool = FunctionTool(calculate_sqrt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建带工具的 agent</span></span><br><span class="line">agent = ChatAgent(</span><br><span class="line">    system_message=<span class="string">&quot;你是一个数学大师，遇到数学问题你要调用工具。&quot;</span>,</span><br><span class="line">    model=model,</span><br><span class="line">    output_language=<span class="string">&#x27;中文&#x27;</span>,</span><br><span class="line">    tools=[sqrt_tool]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">response = agent.step(<span class="string">&quot;2的平方根是多少？&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.msgs[<span class="number">0</span>].content)</span><br><span class="line"><span class="built_in">print</span>(response.info[<span class="string">&quot;tool_calls&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7-3-进阶案例：AI-Society-工具系统"><a href="#2-7-3-进阶案例：AI-Society-工具系统" class="headerlink" title="2.7.3 进阶案例：AI Society + 工具系统"></a>2.7.3 进阶案例：AI Society + 工具系统</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.toolkits <span class="keyword">import</span> SearchToolkit, MathToolkit</span><br><span class="line"><span class="keyword">from</span> camel.societies <span class="keyword">import</span> RolePlaying</span><br><span class="line"><span class="keyword">from</span> camel.types.agents <span class="keyword">import</span> ToolCallingRecord</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType</span><br><span class="line"><span class="keyword">from</span> colorama <span class="keyword">import</span> Fore</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 环境配置</span></span><br><span class="line">load_dotenv()</span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建模型</span></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-72B-Instruct&quot;</span>,</span><br><span class="line">    url=<span class="string">&#x27;https://api-inference.modelscope.cn/v1/&#x27;</span>,</span><br><span class="line">    api_key=api_key</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义工具包</span></span><br><span class="line">tools_list = [</span><br><span class="line">    *SearchToolkit().get_tools(),</span><br><span class="line">    *MathToolkit().get_tools()</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置任务</span></span><br><span class="line">task_prompt = (<span class="string">&quot;假设现在是2024年，牛津大学的成立年份，并计算出其当前年龄。&quot;</span></span><br><span class="line">               <span class="string">&quot;然后再将这个年龄加上10年。使用百度搜索工具。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置角色扮演</span></span><br><span class="line">role_play_session = RolePlaying(</span><br><span class="line">    assistant_role_name=<span class="string">&quot;搜索者&quot;</span>,</span><br><span class="line">    user_role_name=<span class="string">&quot;教授&quot;</span>,</span><br><span class="line">    assistant_agent_kwargs=<span class="built_in">dict</span>(model=model, tools=tools_list),</span><br><span class="line">    user_agent_kwargs=<span class="built_in">dict</span>(model=model),</span><br><span class="line">    task_prompt=task_prompt,</span><br><span class="line">    with_task_specify=<span class="literal">False</span>,</span><br><span class="line">    output_language=<span class="string">&#x27;中文&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化对话</span></span><br><span class="line">input_msg = role_play_session.init_chat()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改进的对话循环 - 添加安全机制</span></span><br><span class="line">max_turns = <span class="number">10</span></span><br><span class="line">turn_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(Fore.CYAN + <span class="string">f&quot;开始执行任务: <span class="subst">&#123;task_prompt&#125;</span>\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(Fore.YELLOW + <span class="string">&quot;=&quot;</span> * <span class="number">60</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> turn_count &lt; max_turns:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        assistant_response, user_response = role_play_session.step(input_msg)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 简化但必要的输出</span></span><br><span class="line">        <span class="built_in">print</span>(Fore.WHITE + <span class="string">f&quot;\n[Turn <span class="subst">&#123;turn_count + <span class="number">1</span>&#125;</span>]&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(Fore.GREEN + <span class="string">f&quot;助手: <span class="subst">&#123;assistant_response.msg.content&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(Fore.BLUE + <span class="string">f&quot;用户: <span class="subst">&#123;user_response.msg.content&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 显示工具调用信息</span></span><br><span class="line">        <span class="keyword">if</span> assistant_response.info[<span class="string">&#x27;tool_calls&#x27;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(Fore.MAGENTA + <span class="string">f&quot;工具调用: <span class="subst">&#123;assistant_response.info[<span class="string">&#x27;tool_calls&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 检查终止条件</span></span><br><span class="line">        <span class="keyword">if</span> assistant_response.terminated <span class="keyword">or</span> user_response.terminated:</span><br><span class="line">            <span class="built_in">print</span>(Fore.RED + <span class="string">&quot;对话终止&quot;</span>)</span><br><span class="line">            <span class="keyword">if</span> assistant_response.terminated:</span><br><span class="line">                <span class="built_in">print</span>(Fore.RED + <span class="string">f&quot;助手终止原因: <span class="subst">&#123;assistant_response.info.get(<span class="string">&#x27;termination_reasons&#x27;</span>, <span class="string">&#x27;未知&#x27;</span>)&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">if</span> user_response.terminated:</span><br><span class="line">                <span class="built_in">print</span>(Fore.RED + <span class="string">f&quot;用户终止原因: <span class="subst">&#123;user_response.info.get(<span class="string">&#x27;termination_reasons&#x27;</span>, <span class="string">&#x27;未知&#x27;</span>)&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 检查任务完成标识</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;CAMEL_TASK_DONE&quot;</span> <span class="keyword">in</span> user_response.msg.content:</span><br><span class="line">            <span class="built_in">print</span>(Fore.GREEN + <span class="string">&quot;任务完成!&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        input_msg = assistant_response.msg</span><br><span class="line">        turn_count += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(Fore.YELLOW + <span class="string">&quot;-&quot;</span> * <span class="number">60</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(Fore.RED + <span class="string">f&quot;执行错误: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可通过 <code>response.info[&quot;tool_calls&quot;]</code> 查看工具调用记录，验证是否使用工具而非“编造”。</p>
+</blockquote>
+<p>这段代码是一个完整的 CAMEL AI 多智能体协作系统实现，以下将详细分析其功能架构和实现机制。</p>
+<ol>
+<li>系统架构分析<br> 1.1 核心组件结构<br> ┌─────────────────────────────────────────────────────────────┐<br> │                    CAMEL AI 多智能体系统                      │<br> ├─────────────────────────────────────────────────────────────┤<br> │  环境配置层    │ 模型工厂层  │ 工具包层  │ 角色扮演层  │ 执行控制层 │<br> │  ├─ 环境变量   │ ├─ 模型创建 │ ├─ 搜索   │ ├─ 双智能体 │ ├─ 安全机制 │<br> │  ├─ API配置   │ ├─ 平台适配 │ ├─ 计算   │ ├─ 任务分配 │ ├─ 异常处理 │<br> │  └─ 密钥管理   │ └─ 连接建立 │ └─ 工具链 │ └─ 协作模式 │ └─ 循环控制 │<br> └─────────────────────────────────────────────────────────────┘<br> 1.2 数据流向分析<br> 用户任务 → 角色扮演系统 → 智能体交互 → 工具调用 → 结果返回 → 任务完成<br>  ↓         ↓           ↓          ↓          ↓          ↓<br> 任务解析   角色分配    消息传递    功能执行    数据处理    状态更新</li>
+<li>详细功能实现<br>2.1 环境配置与模型初始化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python<span class="comment"># 环境配置层</span></span><br><span class="line">load_dotenv()</span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>模型工厂层</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-72B-Instruct&quot;</span>,</span><br><span class="line">    url=<span class="string">&#x27;https://api-inference.modelscope.cn/v1/&#x27;</span>,</span><br><span class="line">    api_key=api_key</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>功能特点:<br>配置解耦: 使用环境变量管理敏感信息<br>平台抽象: 支持多种模型平台的统一接口<br>模型选择: 使用 Qwen2.5-72B 大模型作为推理引擎</p>
+<p>2.2 工具包集成机制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pythontools_list = [</span><br><span class="line">    *SearchToolkit().get_tools(),</span><br><span class="line">    *MathToolkit().get_tools()</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>工具能力分析:</p>
+<p>SearchToolkit:</p>
+<p>百度搜索、谷歌搜索、DuckDuckGo搜索<br>信息检索和网络查询能力</p>
+<p>MathToolkit:</p>
+<p>数学计算、公式求解<br>数值分析和统计计算</p>
+<p>扩展性: 使用解包操作符支持动态工具添加</p>
+<p>2.3 角色扮演系统设计<br>pythonrole_play_session &#x3D; RolePlaying(<br>    assistant_role_name&#x3D;”搜索者”,<br>    user_role_name&#x3D;”教授”,<br>    assistant_agent_kwargs&#x3D;dict(model&#x3D;model, tools&#x3D;tools_list),<br>    user_agent_kwargs&#x3D;dict(model&#x3D;model),<br>    task_prompt&#x3D;task_prompt,<br>    with_task_specify&#x3D;False,<br>    output_language&#x3D;’中文’<br>)<br>角色分工机制:<br>搜索者（Assistant）:<br>具备工具调用能力<br>负责信息检索和计算执行<br>主动解决问题的执行者</p>
+<p>教授（User）:<br>任务分析和指导<br>结果验证和反馈<br>决策和监督角色</p>
+<p>2.4 任务驱动的协作模式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pythontask_prompt = (<span class="string">&quot;假设现在是2024年，牛津大学的成立年份，并计算出其当前年龄。&quot;</span></span><br><span class="line">               <span class="string">&quot;然后再将这个年龄加上10年。使用百度搜索工具。&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>任务分解策略:<br>信息获取: 搜索牛津大学成立年份<br>数据处理: 计算当前年龄 (2024 - 成立年份)<br>进一步计算: 年龄 + 10 年<br>工具约束: 明确使用百度搜索工具</p>
+<ol start="3">
+<li>执行控制机制<br>3.1 安全的循环控制</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pythonmax_turns = <span class="number">10</span></span><br><span class="line">turn_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> turn_count &lt; max_turns:</span><br></pre></td></tr></table></figure>
+<p>安全机制:<br>轮次限制: 防止无限循环<br>计数器: 跟踪执行进度<br>资源保护: 避免资源耗尽</p>
+<p>3.2 异常处理机制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pythontry:</span><br><span class="line">    assistant_response, user_response = role_play_session.step(input_msg)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(Fore.RED + <span class="string">f&quot;执行错误: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>错误处理策略:<br>捕获异常: 网络错误、API调用失败<br>友好提示: 彩色输出错误信息<br>优雅退出: 避免程序崩溃</p>
+<p>3.3 终止条件检查</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python<span class="comment"># 智能体主动终止</span></span><br><span class="line"><span class="keyword">if</span> assistant_response.terminated <span class="keyword">or</span> user_response.terminated:</span><br><span class="line">    <span class="built_in">print</span>(Fore.RED + <span class="string">&quot;对话终止&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 任务完成检查</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">&quot;CAMEL_TASK_DONE&quot;</span> <span class="keyword">in</span> user_response.msg.content:</span><br><span class="line">    <span class="built_in">print</span>(Fore.GREEN + <span class="string">&quot;任务完成!&quot;</span>)</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>多重终止机制:<br>智能体终止: 基于内部逻辑判断<br>任务完成: 基于特定标识符<br>强制终止: 基于轮次限制</p>
+<ol start="4">
+<li>系统优势<br>4.1 架构优势<br>模块化设计: 各组件独立可替换<br>可扩展性: 支持新工具和角色的添加<br>平台无关: 支持多种模型平台</li>
+</ol>
+<p>4.2 功能优势<br>智能协作: 双智能体协同工作<br>工具集成: 多种工具无缝集成<br>任务导向: 明确的任务驱动机制</p>
+<p>代码运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">开始执行任务: 假设现在是2024年，牛津大学的成立年份，并计算出其当前年龄。然后再将这个年龄加上10 年。使用百度搜索工具。</span><br><span class="line"></span><br><span class="line">============================================================</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line"></span><br><span class="line">[Turn 1]</span><br><span class="line">助手: 看来通过搜索引擎直接获取牛津大学的确切成立年份遇到了一些困难，因为多次尝试使用不同的关键 词组合（如“建立年份”、“创立时间”等）都没有返回有效的结果。不过，根据普遍的历史记录和教育资料， 牛津大学的成立年份通常被认为是1096年左右。这是因为牛津大学没有确切的建校日期，但有记录显示，早 在1096年就已经有了教学活动。</span><br><span class="line"></span><br><span class="line">接下来，我们可以基于这一信息继续完成任务。假设现在是2024年，我们将使用1096年作为牛津大学的成立 年份来计算其当前年龄，并在此基础上再加上10年。</span><br><span class="line"></span><br><span class="line">Solution: 首先计算牛津大学在2024年的年龄，然后将这个年龄加上10年。计算方法如下：</span><br><span class="line">1. 计算2024年时牛津大学的年龄：2024 - 1096 = 928年。</span><br><span class="line">2. 将这个年龄加上10年：928 + 10 = 938年。</span><br><span class="line"></span><br><span class="line">因此，如果现在是2024年，那么牛津大学的年龄将是928年，再加上10年后，它的年龄将是938年。</span><br><span class="line"></span><br><span class="line">Next request.</span><br><span class="line">用户: Instruction: 使用百度搜索工具查找牛津大学的成立年份。</span><br><span class="line">Input: None</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_03377cb5855047779966f1&#x27;), ToolCallingRecord(tool_name=&#x27;search_google&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;num_result_pages&#x27;: 1&#125;, result=[&#123;&#x27;error&#x27;: &#x27;google search failed.&#x27;&#125;], tool_call_id=&#x27;call_5e2d126b8c5c4d0ab61830&#x27;), ToolCallingRecord(tool_name=&#x27;search_bing&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: [&#123;&#x27;result_id&#x27;: 1, &#x27;snippet&#x27;: &#x27;&#x27;, &#x27;title&#x27;: &#x27;火遍全网的牛津阅读树应该怎么刷？孩子才愿意自主学习 ...&#x27;, &#x27;link&#x27;: &#x27;https://www.zhihu.com/tardis/bd/art/710913755&#x27;&#125;]&#125;, tool_call_id=&#x27;call_d0611c8f52ed40088d6f04&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创建时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_1030fde3d5e5488e802e00&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建校时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_d8c4ed8c89d24413abdd99&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_85c1047a67004062838bd4&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_3c6ad476db73499c9f3430&#x27;), ToolCallingRecord(tool_name=&#x27;search_google&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;num_result_pages&#x27;: 1&#125;, result=[&#123;&#x27;error&#x27;: &#x27;google search failed.&#x27;&#125;], tool_call_id=&#x27;call_8ef4dccfd97b43a6a5b84c&#x27;), ToolCallingRecord(tool_name=&#x27;search_bing&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: [&#123;&#x27;result_id&#x27;: 1, &#x27;snippet&#x27;: &#x27;&#x27;, &#x27;title&#x27;: &#x27;火遍全网的牛津阅读树应该怎么刷？孩子才愿意自主学习 ...&#x27;, &#x27;link&#x27;: &#x27;https://www.zhihu.com/tardis/bd/art/710913755&#x27;&#125;]&#125;, tool_call_id=&#x27;call_e7187dd15c614c5cb6431f&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_20a26bcda1f749b4ad1451&#x27;)]</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">[Turn 2]</span><br><span class="line">助手: 尽管多次尝试通过不同的搜索引擎和关键词组合查询牛津大学的确切成立年份，但似乎无法从这些搜 索结果中直接获得准确的信息。然而，根据广泛接受的历史资料，牛津大学的成立年份通常被认定为1096年 左右。</span><br><span class="line"></span><br><span class="line">基于此信息，我们已经完成了之前的计算步骤，即假设现在是2024年，牛津大学的年龄为928年；再过10年后，它的年龄将会是938年。</span><br><span class="line"></span><br><span class="line">既然已经确认了计算结果，我们的任务可以结束了。如果您有任何其他问题或需要进一步的帮助，请随时告 诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: Instruction: 确认计算结果并结束任务。</span><br><span class="line">Input: None</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">[Turn 3]</span><br><span class="line">助手: 根据维基百科的资料，牛津大学的教学活动可以追溯到1096年，这是英语世界中最古老的大学，也是 世界上持续运营的第二古老大学。因此，我们可以确认牛津大学的成立年份为1096年。</span><br><span class="line"></span><br><span class="line">按照之前的计算方法：</span><br><span class="line">1. 如果现在是2024年，牛津大学的年龄为：2024 - 1096 = 928年。</span><br><span class="line">2. 再加上10年后的年龄为：928 + 10 = 938年。</span><br><span class="line"></span><br><span class="line">任务已经完成。如果您还有其他问题或需要进一步的帮助，请告诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: CAMEL_TASK_DONE</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;call_adbbda4b67004ea3b38de2&#x27;), ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;Oxford University&#x27;&#125;, result=&quot;The University of Oxfo任务已经完成。如果您还有其他问题或需要进一步的帮助，请告诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: CAMEL_TASK_DONE</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;call_adbbda4b67004ea3b38de2&#x27;), ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;Oxford University&#x27;&#125;, result=&quot;The University of Oxfo工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;rd is a collegiatrd is a collegiate research university in Oxford, England. There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world&#x27;s second-oldest university in continuous operation.\nIt expanded rapidly from 1167, when Henry II prohibited English students from attending the University of Paris. When disputes erupted between students and the Oxford townspeople, some Oxford academics fled northeast to Cambridge, where they established the University of Cambridge in 1209. The two English ancient universities share many common features and are jointly referred to as Oxbridge.&quot;, tool_call_id=&#x27;call_4456a1825530488a804b6b&#x27;)]</span><br><span class="line">任务完成!</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/CAMEL/" rel="tag"># CAMEL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/07/14/Agent_camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89/Agent_camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89/" rel="prev" title="Agent_camel 框架学习记录（1）">
+                  <i class="fa fa-angle-left"></i> Agent_camel 框架学习记录（1）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/07/15/Agent-camel%E6%A1%86%E6%9E%B6%E7%BB%83%E4%B9%A0%EF%BC%882%EF%BC%89/" rel="next" title="Agent_camel框架练习（2）">
+                  Agent_camel框架练习（2） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Su Tang</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
