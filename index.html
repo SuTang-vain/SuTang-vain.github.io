@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/15/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%882%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/18/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%883%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -184,7 +184,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/15/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%882%EF%BC%89/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/2025/07/18/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%883%EF%BC%89/" class="post-title-link" itemprop="url">【Python】 第三章学习心得</a>
         </h2>
 
         <div class="post-meta-container">
@@ -196,7 +196,16 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-07-15 23:49:46 / Modified: 23:49:25" itemprop="dateCreated datePublished" datetime="2025-07-15T23:49:46+08:00">2025-07-15</time>
+      <time title="Created: 2025-07-18 00:09:00 / Modified: 00:13:01" itemprop="dateCreated datePublished" datetime="2025-07-18T00:09:00+08:00">2025-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">学习心得</span></a>
+        </span>
     </span>
 
   
@@ -209,84 +218,264 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="《聪明办法学-Python（第2版）》第二章学习心得：数据类型和操作"><a href="#《聪明办法学-Python（第2版）》第二章学习心得：数据类型和操作" class="headerlink" title="《聪明办法学 Python（第2版）》第二章学习心得：数据类型和操作"></a>《聪明办法学 Python（第2版）》第二章学习心得：数据类型和操作</h1><p>通过学习第二章“数据类型和操作”，我对 Python 中的基本数据类型、内置常量、运算符、以及表达式求值有了更深入的理解。这一章不仅强化了我对数据本质的认知，也让我意识到在编程时，数据类型和运算符的选择会直接影响程序的行为和逻辑表达。以下是我的学习体会和重点整理：</p>
-<h2 id="常见内置数据类型"><a href="#常见内置数据类型" class="headerlink" title="常见内置数据类型"></a>常见内置数据类型</h2><p>Python 提供了丰富的内置数据类型，常见的包括：</p>
+          <p>《聪明办法学 Python（第2版）》第三章学习心得：变量与数据类型</p>
+<p>通过对第三章“变量与数据类型”的学习，我对 Python 的基础数据结构和变量使用方法有了更加深入的理解，为今后的程序构建打下了坚实的基础。</p>
+<hr>
+<h3 id="变量的本质与命名规则"><a href="#变量的本质与命名规则" class="headerlink" title="变量的本质与命名规则"></a>变量的本质与命名规则</h3><p>在这一章中，变量不再只是“用来存东西的盒子”那么简单，而被赋予了更贴近 Python 精神的理解 —— <strong>名字指向对象（name → object）</strong>。</p>
+<p>我学到的重要点包括：</p>
 <ul>
-<li>整数（int）</li>
-<li>浮点数（float）</li>
-<li>布尔值（bool）</li>
-<li>字符串（str）</li>
-<li>列表（list）</li>
-<li>元组（tuple）</li>
-<li>集合（set）</li>
-<li>字典（dict）</li>
-<li>复数（complex）</li>
-<li>函数（function）</li>
-<li>模块（module）</li>
-<li>类型本身（type）</li>
+<li>变量不需要声明类型，赋值即创建，例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line">name = <span class="string">&quot;Alice&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>命名规则简洁直观（小写字母、下划线分隔、不能以数字开头等），并且不建议使用保留字（如 <code>if</code>, <code>class</code>, <code>for</code> 等）。</li>
+</ul>
+<hr>
+<h3 id="基本数据类型与类型转换"><a href="#基本数据类型与类型转换" class="headerlink" title="基本数据类型与类型转换"></a>基本数据类型与类型转换</h3><p>本章详尽介绍了几种常用的基本数据类型，包括：</p>
+<ul>
+<li>数值类型：<code>int</code>、<code>float</code></li>
+<li>字符串类型：<code>str</code></li>
+<li>布尔类型：<code>bool</code></li>
+</ul>
+<p>我特别记住了几个实用的函数：</p>
+<ul>
+<li><code>type()</code>：查看变量的类型</li>
+<li><code>int()</code> &#x2F; <code>float()</code> &#x2F; <code>str()</code>：类型转换</li>
+<li><code>bool()</code>：任何值都可以转换为布尔值（如非零即真，空字符串为假）</li>
 </ul>
 <p>示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2</span>))           <span class="comment"># &lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2.2</span>))         <span class="comment"># &lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2</span> &lt; <span class="number">2.2</span>))     <span class="comment"># &lt;class &#x27;bool&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))     <span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))    <span class="comment"># &lt;class &#x27;list&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">3.14</span>))       <span class="comment"># &lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="string">&quot;42&quot;</span>))        <span class="comment"># 42</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&quot;&quot;</span>))         <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
 
-<p>特别有趣的是，Python 中“类型”本身也是一种类型，即 <code>type</code>，这反映了 Python 强大的面向对象设计理念。</p>
-<h2 id="内置常量"><a href="#内置常量" class="headerlink" title="内置常量"></a>内置常量</h2><p>Python 中常见的内置常量有：</p>
+<hr>
+<h3 id="运算符的使用与优先级"><a href="#运算符的使用与优先级" class="headerlink" title="运算符的使用与优先级"></a>运算符的使用与优先级</h3><p>这一部分复习并扩展了数学运算的知识，并引入了 Python 特有的运算符用法：</p>
 <ul>
-<li><code>True</code>、<code>False</code>：布尔类型常量</li>
-<li><code>None</code>：表示空值</li>
-<li>数学常量（通过 <code>math</code> 模块）：<ul>
-<li><code>math.pi</code>：π ≈ 3.14159</li>
-<li><code>math.e</code>：自然对数底 ≈ 2.71828</li>
-<li><code>math.tau</code>：τ ≈ 6.28318</li>
-<li><code>math.inf</code>：正无穷大</li>
+<li>算术运算符：<code>+ - * / // % **</code></li>
+<li>比较运算符：<code>== != &gt; &lt; &gt;= &lt;=</code></li>
+<li>逻辑运算符：<code>and or not</code></li>
 </ul>
-</li>
-</ul>
-<p>这些常数在数学运算和逻辑判断中非常常用，也大大提升了表达力。</p>
-<h2 id="算术运算符和整除"><a href="#算术运算符和整除" class="headerlink" title="算术运算符和整除"></a>算术运算符和整除</h2><p>Python 支持多种运算符，包括：</p>
+<p>我印象深刻的是：</p>
 <ul>
-<li>算术运算：<code>+ - * / // % **</code></li>
-<li>比较运算：<code>&lt; &lt;= == != &gt;= &gt;</code></li>
-<li>赋值运算：<code>+= -= *= //= %= **=</code></li>
-<li>逻辑运算：<code>and or not</code></li>
+<li><code>//</code> 是地板除法，结果向下取整</li>
+<li><code>**</code> 是幂运算，如 <code>2 ** 3 == 8</code></li>
+<li>字符串可以进行加法和乘法：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span> * <span class="number">3</span>)   <span class="comment"># HiHiHi</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>特别需要注意：</p>
+<p>还学到了 <strong>运算符优先级</strong>，类似数学中的“先乘除后加减”，使用括号可以明确顺序，增强代码可读性。</p>
+<hr>
+<h3 id="我的收获与思考"><a href="#我的收获与思考" class="headerlink" title="我的收获与思考"></a>我的收获与思考</h3><p>本章不仅教我如何使用变量与基本类型，更让我理解了 Python 语言“简洁但不简单”的设计理念：</p>
 <ul>
-<li><code>/</code> 表示浮点除法，结果为浮点数</li>
-<li><code>//</code> 表示整除，会舍弃小数部分</li>
-<li><code>%</code> 表示取余</li>
+<li>一切皆对象，变量只是对象的标签</li>
+<li>不强制类型，但类型管理依然清晰</li>
+<li>运算表达灵活，适合快速开发</li>
 </ul>
-<p>示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">5</span> / <span class="number">3</span>)   <span class="comment"># 1.666...</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> // <span class="number">3</span>)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(-<span class="number">4</span> // <span class="number">3</span>) <span class="comment"># -2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> % <span class="number">3</span>)   <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<p>通过练习，我逐渐体会到了写 Python 代码时的“自然感”，就像是在“表达思路”，而不是“翻译成机器语言”。</p>
+<hr>
 
-<p>还学习了自定义的模运算实现方式：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">mod</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a - (a // b) * b</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<h2 id="运算符优先级与结合律"><a href="#运算符优先级与结合律" class="headerlink" title="运算符优先级与结合律"></a>运算符优先级与结合律</h2><p>本章强调了表达式中不同运算符的优先级，例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">2</span> + <span class="number">3</span> * <span class="number">4</span>)    <span class="comment"># 14，而不是 20</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span> ** <span class="number">3</span> ** <span class="number">2</span>)  <span class="comment"># 262144，而不是 4096</span></span><br></pre></td></tr></table></figure>
+    
+    
+    
 
-<p>此外，Python 中运算符具有结合律（如从左到右或从右到左），这些都对表达式求值结果有重要影响。</p>
-<h2 id="类型影响运算语义"><a href="#类型影响运算语义" class="headerlink" title="类型影响运算语义"></a>类型影响运算语义</h2><p>相同的运算符在不同类型之间的运算行为可能不同：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">3</span> * <span class="number">2</span>)         <span class="comment"># 6（数值乘法）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span> * <span class="string">&quot;abc&quot;</span>)     <span class="comment"># abcabcabc（字符串重复）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span> + <span class="string">&quot;You&quot;</span>)  <span class="comment"># HiYou（字符串拼接）</span></span><br></pre></td></tr></table></figure>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
-<h2 id="浮点数误差"><a href="#浮点数误差" class="headerlink" title="浮点数误差"></a>浮点数误差</h2><p>本章还介绍了浮点数的误差问题，这是由底层二进制表示方式决定的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.1</span> + <span class="number">0.1</span> + <span class="number">0.1</span> == <span class="number">0.3</span>)  <span class="comment"># False</span></span><br><span class="line"><span class="built_in">print</span>((<span class="number">0.1</span> + <span class="number">0.1</span> + <span class="number">0.1</span>) - <span class="number">0.3</span>) <span class="comment"># 5.551115123125783e-17（非常小的误差）</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="短路求值"><a href="#短路求值" class="headerlink" title="短路求值"></a>短路求值</h2><p>逻辑运算中会触发“短路求值”机制：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">yes</span>(): <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">no</span>(): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">crash</span>(): <span class="keyword">return</span> <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(no() <span class="keyword">and</span> crash())  <span class="comment"># 不会报错，因为 no() 为 False</span></span><br><span class="line"><span class="built_in">print</span>(yes() <span class="keyword">or</span> crash())  <span class="comment"># 不会报错，因为 yes() 为 True</span></span><br></pre></td></tr></table></figure>
 
-<p>这对于控制逻辑流程、避免错误非常有帮助。</p>
-<h2 id="type-vs-isinstance"><a href="#type-vs-isinstance" class="headerlink" title="type() vs isinstance()"></a>type() vs isinstance()</h2><p><code>type()</code> 用于判断数据类型，但更推荐使用 <code>isinstance()</code> 来判断一个对象是否属于某个类或其子类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numbers</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">isNumber</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">isinstance</span>(x, numbers.Number)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1</span>))       <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1.1</span>))     <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1</span>+<span class="number">2j</span>))    <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="string">&quot;text&quot;</span>))  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过本章学习，我掌握了 Python 常见的数据类型与内置运算符，理解了它们的行为及差异。在今后的编程中，我将更加注意：</p>
-<ul>
-<li>使用正确的类型与运算符组合</li>
-<li>利用 <code>isinstance()</code> 实现更健壮的类型判断</li>
-<li>理解表达式求值的过程与短路机制</li>
-<li>留意浮点数计算的精度问题</li>
-</ul>
-<p>这为我编写更高效、可靠的 Python 程序奠定了坚实的基础。</p>
+    
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/17/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/17/Agent-camel%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" class="post-title-link" itemprop="url">Agent-camel框架学习记录（3）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-17 18:51:36" itemprop="dateCreated datePublished" datetime="2025-07-17T18:51:36+08:00">2025-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-07-18 00:35:19" itemprop="dateModified" datetime="2025-07-18T00:35:19+08:00">2025-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <hr>
+<h2 id="CAMEL-多智能体工作流系统概览"><a href="#CAMEL-多智能体工作流系统概览" class="headerlink" title="CAMEL 多智能体工作流系统概览"></a>CAMEL 多智能体工作流系统概览</h2><p>CAMEL是一个用于构建多智能体协作系统的框架，它通过角色扮演机制，让不同的AI智能体扮演特定角色，并协同完成复杂任务。其核心特点包括：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">任务分解：将复杂任务拆解为可管理的子任务。</span><br><span class="line">角色分工：为每个智能体分配专业角色。</span><br><span class="line">依赖管理：智能地处理任务之间的依赖关系。</span><br><span class="line">高效协作：智能体通过对话和合作共同达成目标。</span><br></pre></td></tr></table></figure>
+<h3 id="RolePlaying：对话式协作"><a href="#RolePlaying：对话式协作" class="headerlink" title="RolePlaying：对话式协作"></a>RolePlaying：对话式协作</h3><p>RolePlaying 是 CAMEL 中实现多智能体协作的主要方式。它模拟人类对话和协作过程，通过 AI用户（发布指令并引导对话）和 AI助手（提供解决方案并执行指令）的多轮对话来完成任务。</p>
+<h4 id="核心概念与参数"><a href="#核心概念与参数" class="headerlink" title="核心概念与参数"></a>核心概念与参数</h4><p>任务（Task）：由初始提示（task_prompt）启动，可由任务指定智能体（with_task_specify）进一步明确。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AI用户（User Agent）：由 user_role_name 定义角色名称。</span><br><span class="line">AI助手（Assistant Agent）：由 assistant_role_name 定义角色名称。</span><br><span class="line">评审者（Critic Agent）：可选，通过 critic_role_name 配置，可以是人类（&quot;human&quot;）或自动评审智能体，用于评估和优化任务完成情况（with_critic_in_the_loop）。</span><br></pre></td></tr></table></figure>
+<h4 id="实践流程"><a href="#实践流程" class="headerlink" title="实践流程"></a>实践流程</h4><p>1.设置参数：导入模块，配置模型，并为任务、AI用户和AI助手设置角色名称及相关参数。<br>2.组建 AI-Society：使用 RolePlaying 类初始化多智能体社会。<br>3.解决任务：通过循环调用 society.step() 进行多轮对话，直至任务完成或达到终止条件。is_terminated() 函数可用于检查会话终止原因。</p>
+<h3 id="Workforce：大规模团队协作"><a href="#Workforce：大规模团队协作" class="headerlink" title="Workforce：大规模团队协作"></a>Workforce：大规模团队协作</h3><p>Workforce 适用于更复杂的、需要多个智能体并行或串行协作的场景，如软件开发、内容生产和项目管理。它允许用户定义多个“工作节点”（Worker Nodes），每个节点可以是一个拥有特定能力和职责的 ChatAgent。</p>
+<h4 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Workforce 实例：用于管理整个工作组，包含描述、协调智能体（coordinator_agent）和任务规划智能体（task_agent）等。</span><br><span class="line"></span><br><span class="line">工作节点（Worker Nodes）：由 ChatAgent 实例表示，每个节点拥有独特的系统消息（system_message）、模型配置和可选的工具集（tools），如搜索工具。</span><br><span class="line"></span><br><span class="line">任务（Task）：封装具体工作需求，包含 content（任务内容）、additional_info（附加信息）和 id（唯一标识）。</span><br></pre></td></tr></table></figure>
+<h4 id="实践流程-1"><a href="#实践流程-1" class="headerlink" title="实践流程"></a>实践流程</h4><p>1.创建 Workforce 实例：初始化 Workforce 对象，并可配置其描述、协调器和任务代理模型。<br>2.定义 Worker：创建具有不同角色和能力的 ChatAgent 实例（例如：搜索助手、规划师、评审员）。<br>3.添加工作节点：使用 add_single_agent_worker() 方法将定义的 ChatAgent 添加到 Workforce 中，并为其提供精准的描述，以便协调器分配任务。<br>4.启动 Workforce 并处理任务：创建 Task 对象，然后调用 workforce.process_task(task) 启动任务处理流程，Workforce 将根据节点描述自动分发子任务并整合结果。</p>
+<p>综上，CAMEL 提供了两种主要的多智能体协作模式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RolePlaying：适用于双向对话和逐步协作的场景，通过 AI 用户和 AI 助手的互动来细化并完成任务。</span><br><span class="line"></span><br><span class="line">Workforce：适用于多角色、大规模团队协作的场景，通过协调智能体调度多个拥有特定能力的 ChatAgent 共同完成复杂任务，并可引入外部工具辅助。</span><br></pre></td></tr></table></figure>
+<p>两种模式都强调通过明确的角色定义和系统消息来提升智能体的能力和协作效率。</p>
+<h3 id="由于先前我们已经在之前的学习笔记以及练习中梳理过RolePlaying相关的内容以及演示，我们接下来主要演示Workforce场景的使用："><a href="#由于先前我们已经在之前的学习笔记以及练习中梳理过RolePlaying相关的内容以及演示，我们接下来主要演示Workforce场景的使用：" class="headerlink" title="由于先前我们已经在之前的学习笔记以及练习中梳理过RolePlaying相关的内容以及演示，我们接下来主要演示Workforce场景的使用："></a>由于先前我们已经在之前的学习笔记以及练习中梳理过RolePlaying相关的内容以及演示，我们接下来主要演示Workforce场景的使用：</h3><hr>
+<p>下面我们将创建一个简单的 Workforce 示例，让不同的智能体共同完成一个任务，比如生成一份关于东京旅游的行程规划。我们将定义以下角色：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> 工作节点（Worker Agents）的定义</span><br><span class="line">在这个优化版本中，我们为每个智能体赋予了更明确、更专业的职责，并移除了对外部搜索工具的依赖，让它们专注于利用自身的“知识库”来提供信息和执行任务。</span><br><span class="line"></span><br><span class="line">东京旅游专家 (Researcher Agent)：</span><br><span class="line"></span><br><span class="line">角色定位：一位经验丰富的东京旅游专家。</span><br><span class="line"></span><br><span class="line">职责：利用其丰富的内置知识提供东京的景点、美食、交通和购物信息，不再进行网络搜索，以确保信息来源可控且避免速率限制。</span><br><span class="line"></span><br><span class="line">高级旅游规划师 (Planner Agent)：</span><br><span class="line"></span><br><span class="line">角色定位：专业的行程规划师。</span><br><span class="line"></span><br><span class="line">职责：根据“东京旅游专家”提供的信息和游客的详细需求，精心制定一份合理、详细且吸引人的3日东京旅游行程，注重时间、交通和体验平衡。</span><br><span class="line"></span><br><span class="line">资深旅行评论员 (Reviewer Agent)：</span><br><span class="line"></span><br><span class="line">角色定位：眼光独到的旅行评论员。</span><br><span class="line"></span><br><span class="line">职责：严格评估规划师制定的行程，从实用性、趣味性、性价比、潜在问题和文化体验等多个维度给出建设性反馈和优化建议。</span><br></pre></td></tr></table></figure>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>首先，确保你安装了必要的库并配置了API密钥。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> camel.agents <span class="keyword">import</span> ChatAgent</span><br><span class="line"><span class="keyword">from</span> camel.models <span class="keyword">import</span> ModelFactory</span><br><span class="line"><span class="keyword">from</span> camel.types <span class="keyword">import</span> ModelPlatformType, TaskType</span><br><span class="line"><span class="keyword">from</span> camel.societies.workforce <span class="keyword">import</span> Workforce</span><br><span class="line"><span class="keyword">from</span> camel.messages <span class="keyword">import</span> BaseMessage</span><br><span class="line"><span class="keyword">from</span> camel.tasks <span class="keyword">import</span> Task</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"></span><br><span class="line">load_dotenv()</span><br><span class="line">api_key = os.getenv(<span class="string">&#x27;MODELSCOPE_SDK_TOKEN&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建模型实例</span></span><br><span class="line">model = ModelFactory.create(</span><br><span class="line">    model_platform=ModelPlatformType.OPENAI_COMPATIBLE_MODEL,</span><br><span class="line">    model_type=<span class="string">&quot;Qwen/Qwen2.5-72B-Instruct&quot;</span>,</span><br><span class="line">    url=<span class="string">&#x27;https://api-inference.modelscope.cn/v1/&#x27;</span>,</span><br><span class="line">    api_key=api_key</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;🔧 正在创建优化版本的 Workforce...&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="定义工作节点-Worker-Agents"><a href="#定义工作节点-Worker-Agents" class="headerlink" title="定义工作节点 (Worker Agents)"></a>定义工作节点 (Worker Agents)</h4><p>我们将创建三个不同职责的 ChatAgent，每个 Agent 都有自己的系统消息和潜在的工具。<br> 工作节点（Worker Agents）的定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 研究员 Agent：负责信息搜索</span></span><br><span class="line">researcher_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;旅游信息研究员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;你是一个专业的旅游信息研究员，精通网络搜索。你的职责是准确、全面地收集指定目的地的景点、美食、交通和住宿信息，并提供给规划师。你会使用搜索工具来获取最新和最准确的数据。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model,</span><br><span class="line">    tools=[SearchToolkit().search_duckduckgo] <span class="comment"># 赋予搜索能力</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 规划师 Agent：负责行程规划</span></span><br><span class="line">planner_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;高级旅游规划师&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;你是一位经验丰富的高级旅游规划师。你的职责是根据研究员提供的信息和用户的具体需求，制定一份合理、详细且富有吸引力的旅游行程。你需要考虑时间安排、交通便利性、景点特色和用户体验。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 评审员 Agent：负责评估和优化</span></span><br><span class="line">reviewer_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;资深旅行评论员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;你是一位眼光独到的资深旅行评论员。你的职责是像真正的旅行者一样，从实用性、趣味性、性价比和潜在问题等角度，严格评审规划师提供的旅游行程，并提出建设性的改进意见，确保行程质量。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;✅ 所有工作节点（研究员、规划师、评审员）已定义。&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>本部分代码可以采用Tools实时从网站调取最新的旅游相关信息，以提高研究院代理的推荐精准性并保持最新信息。<br>但是，由于存在“多个搜索任务同时执行，短时间内发送了太多请求，触发了DuckDuckGo 搜索速率限制”问题，最终导致研究员代理无法获取实时的东京旅游信息的问题。<br>因此我们进行了进一步的版本改进：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"><span class="comment"># 定义工作节点 (不使用搜索工具，避免速率限制)</span></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 研究员 Agent：使用内置知识提供信息</span></span><br><span class="line">researcher_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;东京旅游专家&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一位资深的东京旅游专家，拥有丰富的东京旅游知识。你熟悉东京的热门景点、特色美食、交通方式和购物场所。</span></span><br><span class="line"><span class="string">        你的职责是基于你的专业知识，为游客提供准确、实用的东京旅游信息，包括：</span></span><br><span class="line"><span class="string">        - 融合现代与传统的热门景点</span></span><br><span class="line"><span class="string">        - 特色美食推荐和餐厅位置</span></span><br><span class="line"><span class="string">        - 便捷的交通方式和路线</span></span><br><span class="line"><span class="string">        - 适合购物的区域和商场</span></span><br><span class="line"><span class="string">        请提供详细、实用的建议，不需要进行网络搜索。&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 规划师 Agent：负责行程规划</span></span><br><span class="line">planner_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;高级旅游规划师&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一位经验丰富的高级旅游规划师，专门制定东京旅游行程。</span></span><br><span class="line"><span class="string">        你的职责是根据提供的信息和用户需求，制定合理、详细且富有吸引力的旅游行程。</span></span><br><span class="line"><span class="string">        你需要考虑：</span></span><br><span class="line"><span class="string">        - 时间安排的合理性</span></span><br><span class="line"><span class="string">        - 交通便利性和路线优化</span></span><br><span class="line"><span class="string">        - 景点的特色和游客体验</span></span><br><span class="line"><span class="string">        - 餐饮和购物的平衡安排</span></span><br><span class="line"><span class="string">        - 现代与传统文化的结合体验&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 评审员 Agent：负责评估和优化</span></span><br><span class="line">reviewer_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;资深旅行评论员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一位眼光独到的资深旅行评论员，专门评估旅游行程质量。</span></span><br><span class="line"><span class="string">        你的职责是从真正旅行者的角度，严格评审旅游行程，并提出建设性改进意见。</span></span><br><span class="line"><span class="string">        评估维度包括：</span></span><br><span class="line"><span class="string">        - 实用性：交通是否便利，时间安排是否合理</span></span><br><span class="line"><span class="string">        - 趣味性：景点是否有吸引力，体验是否丰富</span></span><br><span class="line"><span class="string">        - 性价比：费用预算是否合理</span></span><br><span class="line"><span class="string">        - 潜在问题：可能遇到的困难和解决方案</span></span><br><span class="line"><span class="string">        - 文化体验：是否能深入了解日本文化&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;✅ 所有工作节点已定义（无搜索工具依赖）&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>在这个优化版本中，我们为每个智能体赋予了更明确、更专业的职责，并移除了对外部搜索工具的依赖，让它们专注于利用自身的“知识库”来提供信息和执行任务。</p>
+<p>Workforce 实例的创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"><span class="comment"># 创建简化的 Workforce 实例</span></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建协调器 Agent</span></span><br><span class="line">coordinator_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;工作组协调员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;你是一个高效的工作组协调员，负责协调旅游规划团队的工作。你需要合理分配任务，确保工作流程顺畅，最终产出高质量的旅游行程规划。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建任务代理 Agent</span></span><br><span class="line"><span class="keyword">from</span> camel.toolkits <span class="keyword">import</span> TaskPlanningToolkit</span><br><span class="line">task_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;任务规划专家&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;你是一个专业的任务规划专家，负责将复杂的旅游规划任务分解为具体的子任务。你擅长分析任务需求，识别关键步骤，并合理安排任务执行顺序。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model,</span><br><span class="line">    tools=TaskPlanningToolkit().get_tools()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Workforce 实例（完整版本）</span></span><br><span class="line">travel_workforce = Workforce(</span><br><span class="line">    description=<span class="string">&quot;东京旅游行程规划与评估工作组&quot;</span>,</span><br><span class="line">    coordinator_agent=coordinator_agent,</span><br><span class="line">    task_agent=task_agent</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>我们创建了一个名为 travel_workforce 的 Workforce 实例，其描述为“东京旅游行程规划与评估工作组”，清晰地概括了整个团队的职能。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">明确的协调器 (Coordinator Agent)：这次我们单独创建了一个 coordinator_agent，并为其分配了“工作组协调员”的角色，强调其负责任务分配和流程顺畅的核心职责。</span><br><span class="line"></span><br><span class="line">明确的任务代理 (Task Agent)：我们也单独创建了 task_agent，赋予其“任务规划专家”的角色，并为其配备了 TaskPlanningToolkit，使其更擅长将复杂任务分解为可执行的子任务。</span><br></pre></td></tr></table></figure>
+<p>工作节点的添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加工作节点</span></span><br><span class="line">travel_workforce.add_single_agent_worker(</span><br><span class="line">    <span class="string">&quot;提供东京的景点、美食和交通专业知识&quot;</span>,</span><br><span class="line">    worker=researcher_agent</span><br><span class="line">).add_single_agent_worker(</span><br><span class="line">    <span class="string">&quot;制定详细的东京3日旅游行程&quot;</span>,</span><br><span class="line">    worker=planner_agent</span><br><span class="line">).add_single_agent_worker(</span><br><span class="line">    <span class="string">&quot;评估旅游行程并提出改进建议&quot;</span>,</span><br><span class="line">    worker=reviewer_agent</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;✅ Workforce 实例已创建并添加所有工作节点&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>使用 add_single_agent_worker() 方法，将前面定义的“东京旅游专家”、“高级旅游规划师”和“资深旅行评论员”作为独立的工人节点添加到 travel_workforce 中。每个节点都附带了简洁明了的职责描述，这是协调器进行任务分配的关键依据。</p>
+<p>创建任务并启动 Workforce<br>最后，我们定义一个要交给 Workforce 处理的任务，并调用 process_task() 方法启动协作流程。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"><span class="comment"># 创建任务并启动</span></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">tokyo_task = Task(</span><br><span class="line">    content=<span class="string">&quot;请为一位首次访问东京的游客规划一份详细的3日旅游行程。行程应包含热门景点、特色美食体验，并考虑交通便利性。&quot;</span>,</span><br><span class="line">    additional_info=&#123;</span><br><span class="line">        <span class="string">&quot;游客偏好&quot;</span>: <span class="string">&quot;希望体验东京的现代与传统结合，对购物和美食有兴趣&quot;</span>,</span><br><span class="line">        <span class="string">&quot;当前日期&quot;</span>: <span class="string">&quot;2025年7月17日&quot;</span>,</span><br><span class="line">        <span class="string">&quot;旅行天数&quot;</span>: <span class="string">&quot;3天&quot;</span>,</span><br><span class="line">        <span class="string">&quot;游客类型&quot;</span>: <span class="string">&quot;首次访问东京的游客&quot;</span>,</span><br><span class="line">        <span class="string">&quot;特殊要求&quot;</span>: <span class="string">&quot;避免过于紧凑的行程，注重文化体验&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">id</span>=<span class="string">&quot;tokyo_trip_plan_optimized&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n🚀 开始处理优化任务: &#x27;<span class="subst">&#123;tokyo_task.content[:<span class="number">50</span>]&#125;</span>...&#x27;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 处理任务</span></span><br><span class="line">    processed_task = travel_workforce.process_task(tokyo_task)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;=&quot;</span>*<span class="number">60</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;📋 任务处理完成&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;=&quot;</span>*<span class="number">60</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;任务ID: <span class="subst">&#123;processed_task.<span class="built_in">id</span>&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n最终结果:\n<span class="subst">&#123;processed_task.result&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n🎉 优化版 Workforce 演示成功！&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n❌ 任务处理出现错误: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;这可能是由于模型配置或网络问题导致的&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>让我们看看最终运行效果如何吧！：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Camel_Test_Project&gt; &amp; D:/Download/Python/py-3.11.9/python.exe d:/Camel_Test_Project/test_Workforce_optimized.py</span><br><span class="line">🔧 正在创建优化版本的 Workforce...</span><br><span class="line">✅ 所有工作节点已定义（无搜索工具依赖）</span><br><span class="line">✅ Workforce 实例已创建并添加所有工作节点</span><br><span class="line"></span><br><span class="line">🚀 开始处理优化任务: &#x27;请为一位首次访问东京的游客规划一份详细的3日旅游行程。行程应包含热门景点、特色美 食体验，并考虑交通便...&#x27;</span><br><span class="line">Worker node a6766c80-35c1-4049-a379-70e3f09aa193 (提供东京的景点、美食和交通专业知识) get task tokyo_trip_plan_optimized.0: 收集东京的热门景点、特色美食和交通信息。</span><br><span class="line">======</span><br><span class="line">Reply from Worker node a6766c80-35c1-4049-a379-70e3f09aa193 (提供东京的景点、美食和交通专业知识):</span><br><span class="line"></span><br><span class="line">对于希望体验东京现代与传统结合的首次访问游客，以下是一些建议：</span><br><span class="line"></span><br><span class="line">**热门景点**:</span><br><span class="line">- **浅草寺**：作为东京最古老的寺庙，浅草寺是体验日本传统文化的绝佳地点。附近还有雷门和仲见世商店街，可以购买到各种手工艺品和小吃。</span><br><span class="line">- **明治神宫**：位于原宿，是一个供奉明治天皇及其妻子的地方。周围有大片森林，环境非常宁静。</span><br><span class="line">- **东京塔/晴空塔**：这两个观景塔都是俯瞰东京全景的好地方，尤其是夜景非常美丽。</span><br><span class="line">- **上野公园及博物馆区**：上野公园内有多个博物馆，如东京国立博物馆，非常适合喜欢艺术和历史的游客。    </span><br><span class="line"></span><br><span class="line">**特色美食**:</span><br><span class="line">- **寿司**：银座的‘すきやばし次郎’（Sukiyabashi Jiro）是世界著名的寿司店，但价格昂贵，可以尝试其他平价但同样美味的寿司店，如‘築地場外市場’（Tsukiji Outer Market）。</span><br><span class="line">- **拉面**：池袋的‘ラーメンストリート’（Ramen Street）汇集了多家拉面店，可以尝试点不同风味的拉面。    </span><br><span class="line">- **烤肉**：新宿的‘焼肉きんぐ’（Yakiniku King）提供自助式的烤肉，性价比高，适合家庭或朋友聚餐。       </span><br><span class="line"></span><br><span class="line">**交通信息**:</span><br><span class="line">- **地铁**：东京地铁网络发达，覆盖主要旅游景点。建议购买一日券或多日券以节省费用。</span><br><span class="line">- **巴士**：观光巴士线路连接了主要的旅游景点，车上有中文解说，适合外国游客。</span><br><span class="line">- **出租车**：虽然价格较高，但在不熟悉地铁系统时，可以考虑使用。</span><br><span class="line">- **步行**：部分景点之间距离较近，如浅草寺和上野公园，可以选择步行游览。</span><br><span class="line"></span><br><span class="line">以上建议希望能帮助您在东京度过一个愉快的文化体验之旅。</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.0 completed successfully.</span><br><span class="line">Worker node d444ab33-281a-4184-9e5e-0e92cfc108f9 (制定详细的东京3日旅游行程) get task tokyo_trip_plan_optimized.1: 基于收集的信息，设计一个结合现代与传统元素、适合购物和美食体验的3日旅游行程。</span><br><span class="line">======</span><br><span class="line">Reply from Worker node d444ab33-281a-4184-9e5e-0e92cfc108f9 (制定详细的东京3日旅游行程):</span><br><span class="line"></span><br><span class="line">### 东京3日游行程安排</span><br><span class="line"></span><br><span class="line">#### 第1天：浅草寺 - 仲见世商店街 - 上野公园及博物馆区</span><br><span class="line">- **上午**：</span><br><span class="line">  - 9:00 - 11:00：参观浅草寺，感受日本的传统宗教文化和建筑。</span><br><span class="line">  - 11:00 - 12:00：漫步仲见世商店街，品尝当地小吃，购买手工艺品。</span><br><span class="line">- **中午**：</span><br><span class="line">  - 12:00 - 13:00：在仲见世商店街附近的餐厅享用午餐，推荐尝试传统的日式料理。</span><br><span class="line">- **下午**：</span><br><span class="line">  - 13:30 - 16:00：前往上野公园，参观东京国立博物馆，了解日本的历史和艺术。</span><br><span class="line">  - 16:00 - 17:30：在上野公园内散步，欣赏自然美景。</span><br><span class="line">- **晚上**：</span><br><span class="line">  - 18:00 - 19:30：在上野站附近的居酒屋享用晚餐，体验日本的夜生活。</span><br><span class="line"></span><br><span class="line">#### 第2天：明治神宫 - 原宿 - 表参道 - 池袋拉面街</span><br><span class="line">- **上午**：</span><br><span class="line">  - 9:00 - 11:00：参观明治神宫，感受宁静的自然环境和传统神道教文化。</span><br><span class="line">- **中午**：</span><br><span class="line">  - 11:30 - 12:30：在原宿的竹下通品尝街头小吃，如章鱼烧和可丽饼。</span><br><span class="line">- **下午**：</span><br><span class="line">  - 13:00 - 15:00：游览表参道，享受时尚购物体验，参观高端品牌店和设计师精品店。</span><br><span class="line">  - 15:30 - 17:00：前往池袋拉面街，尝试不同风味的拉面。</span><br><span class="line">- **晚上**：</span><br><span class="line">  - 18:00 - 19:30：在池袋的居酒屋享用晚餐，体验当地的餐饮文化。</span><br><span class="line"></span><br><span class="line">#### 第3天：东京塔/晴空塔 - 银座 - 新宿烤肉</span><br><span class="line">- **上午**：</span><br><span class="line">  - 9:00 - 11:00：参观东京塔或晴空塔，俯瞰东京全景，欣赏美丽的城市风光。</span><br><span class="line">- **中午**：</span><br><span class="line">  - 11:30 - 12:30：在银座的築地場外市場享用寿司，品尝新鲜的海鲜。</span><br><span class="line">- **下午**：</span><br><span class="line">  - 13:00 - 15:00：在银座购物，购买高端奢侈品和时尚商品。</span><br><span class="line">  - 15:30 - 17:00：自由活动时间，可在银座继续探索或休息。</span><br><span class="line">- **晚上**：</span><br><span class="line">  - 18:00 - 19:30：在新宿的焼肉きんぐ享用自助烤肉，与家人或朋友共度美好时光。</span><br><span class="line"></span><br><span class="line">### 交通建议</span><br><span class="line">- **地铁**：建议购买三日券，方便快捷地到达各个景点。</span><br><span class="line">- **步行**：部分景点之间距离较近，如浅草寺和上野公园，可以选择步行游览。</span><br><span class="line">- **出租车**：在不熟悉地铁系统时，可以考虑使用出租车，尤其是在携带较多行李的情况下。</span><br><span class="line"></span><br><span class="line">希望这个行程能为您的东京之旅带来美好的回忆！祝您旅途愉快！</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.1 completed successfully.</span><br><span class="line">Worker node ebcf8ea8-a047-434f-bb70-82ba9b0f8b92 (评估旅游行程并提出改进建议) get task tokyo_trip_plan_optimized.2: 评估设计的旅游行程，确保其满足游客的需求，包括避免过于紧凑的行程，注重文化体验。        </span><br><span class="line">======</span><br><span class="line">Reply from Worker node ebcf8ea8-a047-434f-bb70-82ba9b0f8b92 (评估旅游行程并提出改进建议):</span><br><span class="line"></span><br><span class="line">### 东京3日游行程评估报告</span><br><span class="line"></span><br><span class="line">#### 实用性</span><br><span class="line">- **交通**：行程中建议使用地铁三日券，这是非常实用的建议，因为东京地铁网络发达，覆盖主要旅游景点，可以节省时间和费用。</span><br><span class="line">- **时间安排**：整体时间安排较为合理，避免了过于紧凑的行程，每个景点都有足够的时间进行参观和体验。    </span><br><span class="line"></span><br><span class="line">#### 趣味性</span><br><span class="line">- **景点吸引力**：行程中包含了许多具有代表性的景点，如浅草寺、明治神宫、东京塔/晴空塔等，这些景点不仅 有历史文化价值，还能让游客感受到东京的现代都市魅力。</span><br><span class="line">- **体验丰富**：除了参观景点，还安排了购物、美食体验，如在仲见世商店街品尝小吃，在築地場外市場享用寿司，在池袋拉面街尝试不同风味的拉面，以及在新宿的焼肉きんぐ享用自助烤肉，这些都能让游客全方位体验东京的魅力。</span><br><span class="line"></span><br><span class="line">#### 性价比</span><br><span class="line">- **费用预算**：建议购买地铁三日券，这是一个经济实惠的选择。此外，行程中推荐了一些性价比高的美食地点，如築地場外市場和池袋拉面街，这有助于控制旅行成本。</span><br><span class="line"></span><br><span class="line">#### 潜在问题</span><br><span class="line">- **语言障碍**：对于不熟悉日语的外国游客，可能会在点餐和购物时遇到困难。建议提前下载翻译应用，或者选择有英文菜单和服务的餐厅。</span><br><span class="line">- **天气变化**：东京的天气多变，特别是在夏季，建议游客随身携带雨具，以防突然下雨。</span><br><span class="line"></span><br><span class="line">#### 文化体验</span><br><span class="line">- **深入体验**：行程中安排了多个具有文化特色的景点，如浅草寺、明治神宫和东京国立博物馆，这些地方可以让游客深入了解日本的历史和文化。</span><br><span class="line">- **互动体验**：建议在浅草寺和明治神宫增加一些互动环节，如参加祈福仪式或体验传统茶道，这样可以进一步增强文化体验。</span><br><span class="line"></span><br><span class="line">总体来说，这个行程设计得非常好，既兼顾了实用性，又提供了丰富的文化体验。希望这些建议能帮助游客更好地享受东京之旅。</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.2 completed successfully.</span><br><span class="line"></span><br><span class="line">============================================================</span><br><span class="line">📋 任务处理完成</span><br><span class="line">============================================================</span><br><span class="line">任务ID: tokyo_trip_plan_optimized</span><br><span class="line"></span><br><span class="line">🎉 Workforce 演示成功！ </span><br></pre></td></tr></table></figure>
+
+
+<p>以及另一个版本的不同输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Camel_Test_Project&gt; &amp; D:/Download/Python/py-3.11.9/python.exe d:/Camel_Test_Project/test_Workforce_optimized.py</span><br><span class="line">🔧 正在创建优化版本的 Workforce...</span><br><span class="line">✅ 所有工作节点已定义（无搜索工具依赖）</span><br><span class="line">✅ Workforce 实例已创建并添加所有工作节点</span><br><span class="line"></span><br><span class="line">🚀 开始处理优化任务: &#x27;请为一位首次访问东京的游 客规划一份详细的3日旅游行程。行程应包含热门景点、特色美食体验，并考虑交通便...&#x27;</span><br><span class="line">Worker node 39687a9c-f0d1-4cd6-98d9-f71b751d4bde (提供东京的景点、美食和交通专业知识) get task tokyo_trip_plan_optimized.0: 研究东京的热门景 点、特色美食和交通方式，以满足游客对现代与传统 结合的体验需求。</span><br><span class="line">======</span><br><span class="line">Reply from Worker node 39687a9c-f0d1-4cd6-98d9-f71b751d4bde (提供东京的景点、美食和交通专业知 识):</span><br><span class="line"></span><br><span class="line">为了满足您对东京现代与传统结合的体验需求，我为 您规划了为期三天的行程。第一天：上野公园和阿美 横丁，您可以在这里感受到浓厚的传统日本文化氛围 ，同时也能品尝到各种地道的日本小吃。第二天：浅 草寺和雷门，这是东京最古老的寺庙之一，旁边还有 许多传统手工艺品店，之后可以前往附近的东京晴空 塔，体验现代东京的壮观景象。第三天：原宿和表参 道，这里是东京时尚潮流的发源地，有许多独特的商 店和咖啡馆，非常适合购物和拍照。关于交通方式， 建议购买一日券或三日券乘坐地铁，这样既方便又经 济。如果您想体验更多当地生活，也可以选择租用自 行车。至于美食，推荐您尝试寿司、拉面和天妇罗， 这些都可以在上述提到的地方找到。希望这些建议能 帮助您度过一个愉快的东京之旅。</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.0 completed successfully.</span><br><span class="line">Worker node d72e4f78-769b-406d-bacc-cc4b230711b5 (制定详细的东京3日旅游行程) get task tokyo_trip_plan_optimized.1: 基于研究结果，制定一个平衡的3日旅游行程，确保行程不过于紧凑，同时注重文化体验。</span><br><span class="line">======</span><br><span class="line">Reply from Worker node d72e4f78-769b-406d-bacc-cc4b230711b5 (制定详细的东京3日旅游行程):      </span><br><span class="line"></span><br><span class="line">为了满足您对东京现代与传统结合的体验需求，我为 您规划了为期三天的平衡行程。第一天：上午参观上 野公园，感受浓厚的传统日本文化氛围，中午在阿美 横丁品尝各种地道的日本小吃；下午自由活动，可以 选择逛逛附近的博物馆或商店。第二天：上午游览浅 草寺和雷门，了解东京的历史文化；中午在附近品尝 传统的日式料理；下午前往东京晴空塔，体验现代东 京的壮观景象。第三天：全天探索原宿和表参道，这 里是东京时尚潮流的发源地，有许多独特的商店和咖 啡馆，非常适合购物和拍照。关于交通方式，建议购 买三日券乘坐地铁，这样既方便又经济。希望这些建 议能帮助您度过一个愉快的东京之旅。</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.1 completed successfully.</span><br><span class="line">Worker node 3a796729-1774-43b5-b481-60504a509ded (评估旅游行程并提出改进建议) get task tokyo_trip_plan_optimized.2: 评估制定的旅游行程，提出 改进建议，确保行程符合游客的兴趣和特殊要求。   </span><br><span class="line">======</span><br><span class="line">Reply from Worker node 3a796729-1774-43b5-b481-60504a509ded (评估旅游行程并提出改进建议):     </span><br><span class="line"></span><br><span class="line">根据您的需求，我已经评估了这个3天的东京旅游行程。实用性方面，行程中的交通方式建议购买三日券乘 坐地铁，非常便利且经济，同时也提供了租用自行车 的建议，增加了旅行的灵活性。趣味性方面，行程包 含了多个具有代表性的景点，如上野公园、浅草寺、 东京晴空塔等，能够充分体验东京的传统与现代结合 的魅力。此外，还特别提到了购物和美食的地点，符 合您的兴趣。性价比方面，整体行程安排合理，没有 过多的重复和浪费时间的环节，费用预算也相对合理 。潜在问题方面，需要注意的是东京晴空塔可能需要 提前预订门票，以免现场排队时间过长。此外，原宿 和表参道的购物区可能会比较拥挤，建议避开高峰时 段。文化体验方面，行程中安排了多个能够深入了解 日本文化的景点，如上野公园、浅草寺等，能够满足 您对文化体验的需求。总体来说，这是一个很好的行 程，但建议在出行前再次确认所有景点的开放时间和 门票预订情况，以确保行程顺利进行。</span><br><span class="line">======</span><br><span class="line">🎯 Task tokyo_trip_plan_optimized.2 completed successfully.</span><br><span class="line"></span><br><span class="line">============================================================</span><br><span class="line">📋 任务处理完成</span><br><span class="line">============================================================</span><br><span class="line">任务ID: tokyo_trip_plan_optimized</span><br><span class="line"></span><br><span class="line">🎉Workforce 演示成功！</span><br></pre></td></tr></table></figure>
+
+<p>两个输出的版本在输出格式&#x2F;行程规划的具体方面均有不同，但是都遵循“旅行专家推荐→旅游规划师规划→资深评论员审评”的三大步骤，且输出都在预期范围之内。</p>
+<p>后续我又研究了一下，并创建一个既能使用搜索工具，又能避免速率限制问题的解决方案：<br>确保自动在搜索请求之间添加延迟（5秒），以避免触发 DuckDuckGo 的速率限制<br>并进行了一些其它改进优化工作：</p>
+<p>我们主要看搜索部分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"><span class="comment"># 自定义搜索工具类，添加速率限制控制</span></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RateLimitedSearchToolkit</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;带速率限制的搜索工具包&quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, delay_seconds=<span class="number">3</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.search_toolkit = SearchToolkit()</span><br><span class="line">        <span class="variable language_">self</span>.delay_seconds = delay_seconds</span><br><span class="line">        <span class="variable language_">self</span>.last_search_time = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">safe_search_duckduckgo</span>(<span class="params">self, query: <span class="built_in">str</span>, max_results: <span class="built_in">int</span> = <span class="number">5</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;安全的搜索方法，包含速率限制&quot;&quot;&quot;</span></span><br><span class="line">        current_time = time.time()</span><br><span class="line">        time_since_last = current_time - <span class="variable language_">self</span>.last_search_time</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> time_since_last &lt; <span class="variable language_">self</span>.delay_seconds:</span><br><span class="line">            sleep_time = <span class="variable language_">self</span>.delay_seconds - time_since_last</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot; 等待 <span class="subst">&#123;sleep_time:<span class="number">.1</span>f&#125;</span> 秒以避免速率限制...&quot;</span>)</span><br><span class="line">            time.sleep(sleep_time)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            result = <span class="variable language_">self</span>.search_toolkit.search_duckduckgo(query, max_results)</span><br><span class="line">            <span class="variable language_">self</span>.last_search_time = time.time()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot; 搜索成功: <span class="subst">&#123;query[:<span class="number">50</span>]&#125;</span>...&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot; 搜索失败: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f&quot;搜索暂时不可用，请使用已有知识回答。错误: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建速率限制搜索工具实例</span></span><br><span class="line">safe_search = RateLimitedSearchToolkit(delay_seconds=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"><span class="comment"># 定义工作节点（带安全搜索功能）</span></span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 研究员 Agent：使用安全搜索工具</span></span><br><span class="line">researcher_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;东京旅游信息研究员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一个专业的东京旅游信息研究员。你的职责是：</span></span><br><span class="line"><span class="string">        1. 使用搜索工具获取最新的东京旅游信息</span></span><br><span class="line"><span class="string">        2. 如果搜索不可用，使用你的专业知识提供信息</span></span><br><span class="line"><span class="string">        3. 重点关注：热门景点、特色美食、交通方式、购物场所</span></span><br><span class="line"><span class="string">        4. 特别注意现代与传统结合的地方</span></span><br><span class="line"><span class="string">        5. 提供实用、准确的旅游建议</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        搜索策略：</span></span><br><span class="line"><span class="string">        - 使用简洁的关键词避免复杂查询</span></span><br><span class="line"><span class="string">        - 如果遇到速率限制，依靠专业知识回答</span></span><br><span class="line"><span class="string">        - 优先提供2025年最新信息&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model,</span><br><span class="line">    tools=[safe_search.safe_search_duckduckgo]  <span class="comment"># 使用安全搜索工具</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 规划师 Agent</span></span><br><span class="line">planner_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;高级旅游规划师&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一位经验丰富的东京旅游规划师。你的职责是：</span></span><br><span class="line"><span class="string">        1. 根据研究员提供的信息制定详细行程</span></span><br><span class="line"><span class="string">        2. 考虑交通便利性和时间安排</span></span><br><span class="line"><span class="string">        3. 平衡现代与传统文化体验</span></span><br><span class="line"><span class="string">        4. 安排合理的购物和美食时间</span></span><br><span class="line"><span class="string">        5. 确保行程适合首次访问东京的游客</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        规划原则：</span></span><br><span class="line"><span class="string">        - 每天不超过3-4个主要景点</span></span><br><span class="line"><span class="string">        - 合理安排休息时间</span></span><br><span class="line"><span class="string">        - 考虑地理位置的邻近性</span></span><br><span class="line"><span class="string">        - 包含详细的交通指南&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 评审员 Agent</span></span><br><span class="line">reviewer_agent = ChatAgent(</span><br><span class="line">    system_message=BaseMessage.make_assistant_message(</span><br><span class="line">        role_name=<span class="string">&quot;资深旅行评论员&quot;</span>,</span><br><span class="line">        content=<span class="string">&quot;&quot;&quot;你是一位资深的旅行评论员。你的职责是：</span></span><br><span class="line"><span class="string">        1. 从实际旅行者角度评估行程</span></span><br><span class="line"><span class="string">        2. 识别潜在问题和改进空间</span></span><br><span class="line"><span class="string">        3. 提供具体的优化建议</span></span><br><span class="line"><span class="string">        4. 确保行程的实用性和趣味性</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        评估维度：</span></span><br><span class="line"><span class="string">        - 时间安排是否合理</span></span><br><span class="line"><span class="string">        - 交通是否便利</span></span><br><span class="line"><span class="string">        - 费用预算是否适中</span></span><br><span class="line"><span class="string">        - 文化体验是否丰富</span></span><br><span class="line"><span class="string">        - 是否适合目标游客群体&quot;&quot;&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    model=model</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>主要改变以上信息，那么让我们来再看看运行效果如何吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Camel_Test_Project&gt; &amp; D:/Download/Python/py-<span class="number">3.11</span><span class="number">.9</span>/python.exe d:/Camel_Test_Project/CAMEL_Workforce_with_search.py</span><br><span class="line">🔧 正在创建带搜索功能的 Workforce...</span><br><span class="line">D:\Download\Python\py-<span class="number">3.11</span><span class="number">.9</span>\Lib\site-packages\camel\toolkits\function_tool.py:<span class="number">533</span>: UserWarning: Parameter description <span class="keyword">is</span> missing <span class="keyword">for</span> the function <span class="string">&#x27;search_linkup&#x27;</span>. The parameter definition <span class="keyword">is</span> &#123;<span class="string">&#x27;enum&#x27;</span>: [<span class="string">&#x27;searchResults&#x27;</span>, <span class="string">&#x27;sourcedAnswer&#x27;</span>, <span class="string">&#x27;structured&#x27;</span>], <span class="string">&#x27;type&#x27;</span>: [<span class="string">&#x27;string&#x27;</span>, <span class="string">&#x27;null&#x27;</span>]&#125;. This may affect the quality of tool calling.</span><br><span class="line">  warnings.warn(</span><br><span class="line">D:\Download\Python\py-<span class="number">3.11</span><span class="number">.9</span>\Lib\site-packages\camel\toolkits\function_tool.py:<span class="number">533</span>: UserWarning: Parameter description <span class="keyword">is</span> missing <span class="keyword">for</span> the function <span class="string">&#x27;search_alibaba_tongxiao&#x27;</span>. The parameter definition <span class="keyword">is</span> &#123;<span class="string">&#x27;enum&#x27;</span>: [<span class="string">&#x27;OneDay&#x27;</span>, <span class="string">&#x27;OneWeek&#x27;</span>, <span class="string">&#x27;OneMonth&#x27;</span>, <span class="string">&#x27;OneYear&#x27;</span>, <span class="string">&#x27;NoLimit&#x27;</span>], <span class="string">&#x27;type&#x27;</span>: [<span class="string">&#x27;string&#x27;</span>, <span class="string">&#x27;null&#x27;</span>]&#125;. This may affect the quality of tool calling.</span><br><span class="line">  warnings.warn(</span><br><span class="line">D:\Download\Python\py-<span class="number">3.11</span><span class="number">.9</span>\Lib\site-packages\camel\toolkits\function_tool.py:<span class="number">533</span>: UserWarning: Parameter description <span class="keyword">is</span> missing <span class="keyword">for</span> the function <span class="string">&#x27;search_alibaba_tongxiao&#x27;</span>. The parameter definition <span class="keyword">is</span> &#123;<span class="string">&#x27;anyOf&#x27;</span>: [&#123;<span class="string">&#x27;enum&#x27;</span>: [<span class="string">&#x27;finance&#x27;</span>, <span class="string">&#x27;law&#x27;</span>, <span class="string">&#x27;medical&#x27;</span>, <span class="string">&#x27;internet&#x27;</span>, <span class="string">&#x27;tax&#x27;</span>, <span class="string">&#x27;news_province&#x27;</span>, <span class="string">&#x27;news_center&#x27;</span>], <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;string&#x27;</span>&#125;, &#123;<span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;null&#x27;</span>&#125;], <span class="string">&#x27;type&#x27;</span>: [<span class="string">&#x27;null&#x27;</span>]&#125;. This may affect the quality of tool calling.   </span><br><span class="line">  warnings.warn(</span><br><span class="line">D:\Download\Python\py-<span class="number">3.11</span><span class="number">.9</span>\Lib\site-packages\camel\toolkits\function_tool.py:<span class="number">533</span>: UserWarning: Parameter description <span class="keyword">is</span> missing <span class="keyword">for</span> the function <span class="string">&#x27;safe_search_duckduckgo&#x27;</span>. The parameter definition <span class="keyword">is</span> &#123;<span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;string&#x27;</span>&#125;. This may affect the quality of tool calling.</span><br><span class="line">  warnings.warn(</span><br><span class="line">D:\Download\Python\py-<span class="number">3.11</span><span class="number">.9</span>\Lib\site-packages\camel\toolkits\function_tool.py:<span class="number">533</span>: UserWarning: Parameter description <span class="keyword">is</span> missing <span class="keyword">for</span> the function <span class="string">&#x27;safe_search_duckduckgo&#x27;</span>. The parameter definition <span class="keyword">is</span> &#123;<span class="string">&#x27;type&#x27;</span>: [<span class="string">&#x27;integer&#x27;</span>, <span class="string">&#x27;null&#x27;</span>]&#125;. This may affect the quality of tool calling.</span><br><span class="line">  warnings.warn(</span><br><span class="line">✅ 所有工作节点已定义（包含安全搜索功能）</span><br><span class="line">✅ Workforce 实例已创建（包含搜索功能）</span><br><span class="line"></span><br><span class="line">🚀 开始处理带搜索功能的任务...</span><br><span class="line">任务: 请为一位首次访问东京的游客规划一份详细的<span class="number">3</span>日旅游行程。需要包含热门景点、特色美食体验，并考虑交通 便利性。请获取<span class="number">2025</span>年最新的旅游信息。...</span><br><span class="line"></span><br><span class="line">⏳ 正在协调多智能体工作...</span><br><span class="line">Worker node 1370eb13-4f2f-4a47-99f0-cbbbcd2fb50b (负责搜索和提供东京最新的旅游信息，包括景点、美食、交通等) get task tokyo_trip_plan_with_search<span class="number">.0</span>: Subtask <span class="number">1</span> (1370eb13-4f2f-4a47-99f0-cbbbcd2fb50b): 负责搜索和提供东京最新的旅游信息，包括景点、美食、交通等</span><br><span class="line">✅ 搜索成功: 东京 最新 旅游信息 热门景点 特色美食 交通方式 购物场所 <span class="number">2025.</span>..</span><br><span class="line">======</span><br><span class="line">Reply <span class="keyword">from</span> Worker node 1370eb13-4f2f-4a47-99f0-cbbbcd2fb50b (负责搜索和提供东京最新的旅游信息，包括景 点、美食、交通等):</span><br><span class="line"></span><br><span class="line">根据我的知识，以下是对您计划的东京之旅的一些建议，这些信息尽可能地反映了<span class="number">2025</span>年的最新情况，尽管我无法即时检索到最新数据，但这些推荐仍然具有时效性。</span><br><span class="line"></span><br><span class="line">**热门景点**</span><br><span class="line">- **浅草寺**：作为东京最古老的佛教寺庙，浅草寺不仅是一个重要的文化遗址，也是感受日本传统文化的好地方。从雷门进入，可以欣赏到传统的日式建筑和热闹的商店街。</span><br><span class="line">- **东京晴空塔**（Tokyo Skytree）：这座<span class="number">634</span>米高的电波塔不仅是东京的新地标，而且从塔顶可以俯瞰整个东京市区的景色。它很好地代表了东京的现代一面。</span><br><span class="line">- **明治神宫**：位于原宿附近的明治神宫是一个供奉明治天皇和昭宪皇后的神社。这里环境宁静，是体验日本传统宗教仪式的好去处。</span><br><span class="line">- **上野公园及周边**：上野公园是东京著名的赏樱地点，周围有许多博物馆，如东京国立博物馆，适合喜欢艺术和历史的游客。</span><br><span class="line"></span><br><span class="line">**特色美食**</span><br><span class="line">- **寿司**：在筑地市场或银座区尝试新鲜的寿司是许多游客的首选。虽然筑地市场已经迁移到了丰洲，但是该区域依然有许多优质的寿司店。</span><br><span class="line">- **拉面**：东京有很多不同风味的拉面店，比如一兰拉面、Ichiran等，提供了多种选择来满足不同的口味。     </span><br><span class="line">- **居酒屋**：体验日本的居酒屋文化，品尝各种小菜和日本酒，是一种非常地道的享受方式。</span><br><span class="line"></span><br><span class="line">**交通方式**</span><br><span class="line">- **地铁/电车**：东京的公共交通系统发达且准时，是游览城市最方便的方式。购买一日券或多日券可以节省费用 。</span><br><span class="line">- **出租车**：对于不熟悉路线或者携带大量行李的游客来说，乘坐出租车也是一种不错的选择，不过价格相对较高。</span><br><span class="line"></span><br><span class="line">**购物场所**</span><br><span class="line">- **涩谷<span class="number">109</span>**：这里是年轻人时尚潮流的中心，可以找到各种流行的服装品牌。</span><br><span class="line">- **银座**：银座区以其高端的购物环境著称，无论是国际奢侈品牌还是日本本土品牌，在这里都能找到。        </span><br><span class="line">- **秋叶原**：对于动漫迷和技术爱好者来说，秋叶原是必去之地，这里有众多的电器店和动漫周边产品店。      </span><br><span class="line"></span><br><span class="line">**现代与传统结合的地方**</span><br><span class="line">- **表参道**：这条街道不仅有高级时装店和设计感强烈的建筑，还保留了一些传统的日式茶馆和咖啡厅，体现了东京独特的城市风貌。</span><br><span class="line">- **六本木新城**：集美术馆、电影院、餐厅于一体的综合设施，周围还有美丽的绿地和公园，展现了东京现代都市生活的另一面。</span><br><span class="line"></span><br><span class="line">希望这些建议能帮助您规划一个轻松愉快的东京之旅！如果您有任何特定的需求或问题，欢迎随时向我咨询。      </span><br><span class="line">======</span><br><span class="line">Task tokyo_trip_plan_with_search<span class="number">.0</span> completed successfully.</span><br><span class="line">Worker node 9ba18c5a-012a-<span class="number">4200</span>-994d-fee79899706d (负责制定详细的东京<span class="number">3</span>日旅游行程规划) get task tokyo_trip_plan_with_search<span class="number">.1</span>: Subtask <span class="number">2</span> (9ba18c5a-012a-<span class="number">4200</span>-994d-fee79899706d): 根据收集到的信息，制定详细的 东京<span class="number">3</span>日旅游行程规划</span><br><span class="line">======</span><br><span class="line">Reply <span class="keyword">from</span> Worker node 9ba18c5a-012a-<span class="number">4200</span>-994d-fee79899706d (负责制定详细的东京<span class="number">3</span>日旅游行程规划):      </span><br><span class="line"></span><br><span class="line">根据您的需求，以下是为您精心规划的东京三日游行程，旨在平衡现代与传统文化体验，并确保您有足够的时间享受购物和美食。</span><br><span class="line"></span><br><span class="line"><span class="comment">### 第一天：传统文化与美食探索</span></span><br><span class="line">- **上午**：</span><br><span class="line">  - **浅草寺**：从雷门进入，参观这座历史悠久的寺庙，体验日本的传统氛围。（建议停留<span class="number">1</span>-<span class="number">2</span>小时）</span><br><span class="line">  - **仲见世商店街**：在浅草寺附近逛逛，品尝一些传统的日本小吃，如章鱼烧、抹茶甜点等。（建议停留<span class="number">1</span>小时 ）</span><br><span class="line">- **中午**：</span><br><span class="line">  - 在浅草地区尝试一家寿司店，享用新鲜美味的寿司。（建议停留<span class="number">1</span>小时）</span><br><span class="line">- **下午**：</span><br><span class="line">  - **上野公园**：参观上野公园，欣赏美丽的自然风光，如果时间允许，可以参观东京国立博物馆，了解日本的历史和文化。（建议停留<span class="number">2</span>-<span class="number">3</span>小时）</span><br><span class="line">- **晚上**：</span><br><span class="line">  - **秋叶原**：前往秋叶原，体验日本的动漫文化和电子产品市场。这里有许多商店出售动漫周边产品和最新的电子产品。（建议停留<span class="number">2</span>小时）</span><br><span class="line">  - **居酒屋**：在秋叶原或上野附近找一家居酒屋，品尝日本的小菜和清酒，感受日本的夜生活。（建议停留<span class="number">1</span>-<span class="number">2</span> 小时）</span><br><span class="line"></span><br><span class="line"><span class="comment">### 第二天：现代都市体验</span></span><br><span class="line">- **上午**：</span><br><span class="line">  - **东京晴空塔**：前往东京晴空塔，乘坐电梯到达观景台，俯瞰东京市区的美景。（建议停留<span class="number">1</span>-<span class="number">2</span>小时）       </span><br><span class="line">- **中午**：</span><br><span class="line">  - 在晴空塔附近的餐厅享用午餐，尝试一些现代日本料理。（建议停留<span class="number">1</span>小时）</span><br><span class="line">- **下午**：</span><br><span class="line">  - **表参道**：前往表参道，参观时尚的商店和设计感强烈的建筑，体验东京的现代都市风貌。（建议停留<span class="number">2</span>-<span class="number">3</span>小 时）</span><br><span class="line">- **晚上**：</span><br><span class="line">  - **六本木新城**：前往六本木新城，参观美术馆、电影院和餐厅，享受东京的夜生活。（建议停留<span class="number">2</span>-<span class="number">3</span>小时）   </span><br><span class="line"></span><br><span class="line"><span class="comment">### 第三天：购物与休闲</span></span><br><span class="line">- **上午**：</span><br><span class="line">  - **涩谷<span class="number">109</span>**：前往涩谷<span class="number">109</span>，这里是年轻人的时尚潮流中心，可以找到各种流行的服装品牌。（建议停留<span class="number">1</span>-<span class="number">2</span>小 时）</span><br><span class="line">- **中午**：</span><br><span class="line">  - 在涩谷的餐馆享用午餐，尝试一些当地的特色美食。（建议停留<span class="number">1</span>小时）</span><br><span class="line">- **下午**：</span><br><span class="line">  - **明治神宫**：前往明治神宫，参观这个宁静的神社，体验日本的传统宗教仪式。（建议停留<span class="number">1</span>-<span class="number">2</span>小时）       </span><br><span class="line">- **晚上**：</span><br><span class="line">  - **银座**：前往银座，这里是高端购物的天堂，可以找到国际奢侈品牌和日本本土品牌。（建议停留<span class="number">2</span>-<span class="number">3</span>小时） </span><br><span class="line">  - **银座的高级餐厅**：在银座的高级餐厅享用晚餐，结束美好的东京之旅。（建议停留<span class="number">1</span>-<span class="number">2</span>小时）</span><br><span class="line"></span><br><span class="line"><span class="comment">### 交通指南</span></span><br><span class="line">- **地铁/电车**：东京的公共交通系统发达且准时，建议购买一日券或多日券以节省费用。使用Google Maps或Yahoo! Japan Map可以方便地查询路线和换乘信息。</span><br><span class="line">- **出租车**：对于不熟悉路线或者携带大量行李的游客，可以选择乘坐出租车，但价格相对较高。</span><br><span class="line"></span><br><span class="line">希望这份行程能帮助您度过一个愉快的东京之旅！如果有任何问题，请随时联系我。</span><br><span class="line">======</span><br><span class="line">Task tokyo_trip_plan_with_search<span class="number">.1</span> completed successfully.</span><br><span class="line">Worker node 1f0da1fb-fc98-4c70-9dc2-535058fa7990 (负责评估行程质量并提出优化建议) get task tokyo_trip_plan_with_search<span class="number">.2</span>: Subtask <span class="number">3</span> (1f0da1fb-fc98-4c70-9dc2-535058fa7990): 评估行程质量并提出优化建议      </span><br><span class="line">======</span><br><span class="line">Reply <span class="keyword">from</span> Worker node 1f0da1fb-fc98-4c70-9dc2-535058fa7990 (负责评估行程质量并提出优化建议):</span><br><span class="line"></span><br><span class="line">根据提供的行程规划，以下是对东京三日游行程的评估和优化建议：</span><br><span class="line"></span><br><span class="line"><span class="comment">### 评估</span></span><br><span class="line">- **时间安排是否合理**：整体时间安排较为合理，每个活动的时间分配适当，没有过于紧凑的情况。每天的活动量适中，游客可以在充分体验每个景点的同时，也有时间休息。</span><br><span class="line">- **交通是否便利**：东京的公共交通系统非常发达，行程中提到的地铁和电车是最便捷的交通方式。建议购买一日券或多日券，这样可以节省交通费用并减少购票时间。</span><br><span class="line">- **费用预算是否适中**：中等预算下，行程中的景点和活动选择较为合适。特别是免费或低成本的景点（如浅草寺、上野公园、明治神宫等），以及一些经济实惠的餐饮选择（如居酒屋、寿司店等），都符合中等预算的要求。    </span><br><span class="line">- **文化体验是否丰富**：行程涵盖了丰富的文化体验，既有传统的寺庙和神社（如浅草寺、明治神宫），也有现代的城市景观（如东京晴空塔、表参道）。此外，还包括了购物和美食体验，能够满足不同兴趣的游客。</span><br><span class="line">- **是否适合目标游客群体**：行程非常适合首次访问东京的游客，尤其是对购物和美食感兴趣的游客。行程中的景点和活动既展示了东京的传统文化，又体现了其现代都市风貌。</span><br><span class="line"></span><br><span class="line"><span class="comment">### 优化建议</span></span><br><span class="line"><span class="number">1.</span> **增加休息时间**：虽然整体时间安排合理，但在每个活动之间可以适当增加一些自由时间，让游客可以根据自 己的节奏调整行程。</span><br><span class="line"><span class="number">2.</span> **提供具体交通信息**：建议在行程中提供具体的交通线路和换乘信息，特别是在转乘频繁的情况下，可以帮助 游客更高效地到达目的地。</span><br><span class="line"><span class="number">3.</span> **增加夜间活动选项**：虽然行程中已经包含了一些夜间活动（如居酒屋、六本木新城），但可以考虑增加更多 夜间活动选项，如夜游东京湾、观看歌舞伎表演等，以丰富夜生活体验。</span><br><span class="line"><span class="number">4.</span> **推荐经济实惠的住宿**：对于中等预算的游客，可以推荐一些经济实惠且位置便利的住宿选择，如胶囊旅馆、 商务酒店等。</span><br><span class="line"><span class="number">5.</span> **提供备用方案**：考虑到天气等因素可能影响某些户外活动，建议为每个主要活动提供一个备用方案，以确保 行程顺利进行。</span><br><span class="line"></span><br><span class="line">希望这些建议能帮助您进一步完善东京三日游的行程规划，确保游客有一个愉快的旅行体验。</span><br><span class="line">======</span><br><span class="line"> Task tokyo_trip_plan_with_search<span class="number">.2</span> completed successfully.</span><br><span class="line"></span><br><span class="line">================================================================================</span><br><span class="line"> 任务处理完成 </span><br><span class="line">================================================================================</span><br><span class="line">任务ID: tokyo_trip_plan_with_search</span><br><span class="line"></span><br><span class="line">🎉Workforce 演示成功！</span><br><span class="line"></span><br><span class="line">提示：如果搜索遇到速率限制，系统会自动使用内置知识库</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到，目前搜索工具正常调用并且收集网页端最新数据信息，以确保当前旅游规划是最符合当前时间的。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/17/Agent-camel%E6%A1%86%E6%9E%B6%E7%BB%83%E4%B9%A0%EF%BC%883%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/17/Agent-camel%E6%A1%86%E6%9E%B6%E7%BB%83%E4%B9%A0%EF%BC%883%EF%BC%89/" class="post-title-link" itemprop="url">Agent-camel框架练习（3）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-07-17 18:47:58 / Modified: 18:49:39" itemprop="dateCreated datePublished" datetime="2025-07-17T18:47:58+08:00">2025-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%87%AA%E4%B8%BB%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">自主练习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
       
     </div>
 
@@ -583,6 +772,168 @@
 <p>4.2 功能优势<br>智能协作: 双智能体协同工作<br>工具集成: 多种工具无缝集成<br>任务导向: 明确的任务驱动机制</p>
 <p>代码运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">开始执行任务: 假设现在是2024年，牛津大学的成立年份，并计算出其当前年龄。然后再将这个年龄加上10 年。使用百度搜索工具。</span><br><span class="line"></span><br><span class="line">============================================================</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line">Warning: No results found. Check if Baidu HTML structure has changed.</span><br><span class="line"></span><br><span class="line">[Turn 1]</span><br><span class="line">助手: 看来通过搜索引擎直接获取牛津大学的确切成立年份遇到了一些困难，因为多次尝试使用不同的关键 词组合（如“建立年份”、“创立时间”等）都没有返回有效的结果。不过，根据普遍的历史记录和教育资料， 牛津大学的成立年份通常被认为是1096年左右。这是因为牛津大学没有确切的建校日期，但有记录显示，早 在1096年就已经有了教学活动。</span><br><span class="line"></span><br><span class="line">接下来，我们可以基于这一信息继续完成任务。假设现在是2024年，我们将使用1096年作为牛津大学的成立 年份来计算其当前年龄，并在此基础上再加上10年。</span><br><span class="line"></span><br><span class="line">Solution: 首先计算牛津大学在2024年的年龄，然后将这个年龄加上10年。计算方法如下：</span><br><span class="line">1. 计算2024年时牛津大学的年龄：2024 - 1096 = 928年。</span><br><span class="line">2. 将这个年龄加上10年：928 + 10 = 938年。</span><br><span class="line"></span><br><span class="line">因此，如果现在是2024年，那么牛津大学的年龄将是928年，再加上10年后，它的年龄将是938年。</span><br><span class="line"></span><br><span class="line">Next request.</span><br><span class="line">用户: Instruction: 使用百度搜索工具查找牛津大学的成立年份。</span><br><span class="line">Input: None</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_03377cb5855047779966f1&#x27;), ToolCallingRecord(tool_name=&#x27;search_google&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;num_result_pages&#x27;: 1&#125;, result=[&#123;&#x27;error&#x27;: &#x27;google search failed.&#x27;&#125;], tool_call_id=&#x27;call_5e2d126b8c5c4d0ab61830&#x27;), ToolCallingRecord(tool_name=&#x27;search_bing&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 成立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: [&#123;&#x27;result_id&#x27;: 1, &#x27;snippet&#x27;: &#x27;&#x27;, &#x27;title&#x27;: &#x27;火遍全网的牛津阅读树应该怎么刷？孩子才愿意自主学习 ...&#x27;, &#x27;link&#x27;: &#x27;https://www.zhihu.com/tardis/bd/art/710913755&#x27;&#125;]&#125;, tool_call_id=&#x27;call_d0611c8f52ed40088d6f04&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创建时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_1030fde3d5e5488e802e00&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建校时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_d8c4ed8c89d24413abdd99&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_85c1047a67004062838bd4&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_3c6ad476db73499c9f3430&#x27;), ToolCallingRecord(tool_name=&#x27;search_google&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;num_result_pages&#x27;: 1&#125;, result=[&#123;&#x27;error&#x27;: &#x27;google search failed.&#x27;&#125;], tool_call_id=&#x27;call_8ef4dccfd97b43a6a5b84c&#x27;), ToolCallingRecord(tool_name=&#x27;search_bing&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 创立时间&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: [&#123;&#x27;result_id&#x27;: 1, &#x27;snippet&#x27;: &#x27;&#x27;, &#x27;title&#x27;: &#x27;火遍全网的牛津阅读树应该怎么刷？孩子才愿意自主学习 ...&#x27;, &#x27;link&#x27;: &#x27;https://www.zhihu.com/tardis/bd/art/710913755&#x27;&#125;]&#125;, tool_call_id=&#x27;call_e7187dd15c614c5cb6431f&#x27;), ToolCallingRecord(tool_name=&#x27;search_baidu&#x27;, args=&#123;&#x27;query&#x27;: &#x27;牛津大学 建立年份&#x27;, &#x27;max_results&#x27;: 1&#125;, result=&#123;&#x27;results&#x27;: []&#125;, tool_call_id=&#x27;call_20a26bcda1f749b4ad1451&#x27;)]</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">[Turn 2]</span><br><span class="line">助手: 尽管多次尝试通过不同的搜索引擎和关键词组合查询牛津大学的确切成立年份，但似乎无法从这些搜 索结果中直接获得准确的信息。然而，根据广泛接受的历史资料，牛津大学的成立年份通常被认定为1096年 左右。</span><br><span class="line"></span><br><span class="line">基于此信息，我们已经完成了之前的计算步骤，即假设现在是2024年，牛津大学的年龄为928年；再过10年后，它的年龄将会是938年。</span><br><span class="line"></span><br><span class="line">既然已经确认了计算结果，我们的任务可以结束了。如果您有任何其他问题或需要进一步的帮助，请随时告 诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: Instruction: 确认计算结果并结束任务。</span><br><span class="line">Input: None</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">[Turn 3]</span><br><span class="line">助手: 根据维基百科的资料，牛津大学的教学活动可以追溯到1096年，这是英语世界中最古老的大学，也是 世界上持续运营的第二古老大学。因此，我们可以确认牛津大学的成立年份为1096年。</span><br><span class="line"></span><br><span class="line">按照之前的计算方法：</span><br><span class="line">1. 如果现在是2024年，牛津大学的年龄为：2024 - 1096 = 928年。</span><br><span class="line">2. 再加上10年后的年龄为：928 + 10 = 938年。</span><br><span class="line"></span><br><span class="line">任务已经完成。如果您还有其他问题或需要进一步的帮助，请告诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: CAMEL_TASK_DONE</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;call_adbbda4b67004ea3b38de2&#x27;), ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;Oxford University&#x27;&#125;, result=&quot;The University of Oxfo任务已经完成。如果您还有其他问题或需要进一步的帮助，请告诉我！</span><br><span class="line"></span><br><span class="line">任务已完成。</span><br><span class="line">用户: CAMEL_TASK_DONE</span><br><span class="line">工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;call_adbbda4b67004ea3b38de2&#x27;), ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;Oxford University&#x27;&#125;, result=&quot;The University of Oxfo工具调用: [ToolCallingRecord(tool_name=&#x27;search_wiki&#x27;, args=&#123;&#x27;entity&#x27;: &#x27;牛津大学&#x27;&#125;, result=&#x27;There is no page in Wikipedia corresponding to entity 牛津大学, please specify another word to describe the entity to be searched.&#x27;, tool_call_id=&#x27;rd is a collegiatrd is a collegiate research university in Oxford, England. There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world&#x27;s second-oldest university in continuous operation.\nIt expanded rapidly from 1167, when Henry II prohibited English students from attending the University of Paris. When disputes erupted between students and the Oxford townspeople, some Oxford academics fled northeast to Cambridge, where they established the University of Cambridge in 1209. The two English ancient universities share many common features and are jointly referred to as Oxbridge.&quot;, tool_call_id=&#x27;call_4456a1825530488a804b6b&#x27;)]</span><br><span class="line">任务完成!</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/15/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%882%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/15/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%882%EF%BC%89/" class="post-title-link" itemprop="url">【Python】 第二章学习心得</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2025-07-15T00:00:00+08:00">2025-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-07-18 00:11:50" itemprop="dateModified" datetime="2025-07-18T00:11:50+08:00">2025-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">学习心得</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>《聪明办法学 Python（第2版）》第二章学习心得：数据类型和操作</p>
+<p>通过学习第二章“数据类型和操作”，我对 Python 中的基本数据类型、内置常量、运算符、以及表达式求值有了更深入的理解。这一章不仅强化了我对数据本质的认知，也让我意识到在编程时，数据类型和运算符的选择会直接影响程序的行为和逻辑表达。以下是我的学习体会和重点整理：</p>
+<h2 id="常见内置数据类型"><a href="#常见内置数据类型" class="headerlink" title="常见内置数据类型"></a>常见内置数据类型</h2><p>Python 提供了丰富的内置数据类型，常见的包括：</p>
+<ul>
+<li>整数（int）</li>
+<li>浮点数（float）</li>
+<li>布尔值（bool）</li>
+<li>字符串（str）</li>
+<li>列表（list）</li>
+<li>元组（tuple）</li>
+<li>集合（set）</li>
+<li>字典（dict）</li>
+<li>复数（complex）</li>
+<li>函数（function）</li>
+<li>模块（module）</li>
+<li>类型本身（type）</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2</span>))           <span class="comment"># &lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2.2</span>))         <span class="comment"># &lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">2</span> &lt; <span class="number">2.2</span>))     <span class="comment"># &lt;class &#x27;bool&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))     <span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))    <span class="comment"># &lt;class &#x27;list&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>特别有趣的是，Python 中“类型”本身也是一种类型，即 <code>type</code>，这反映了 Python 强大的面向对象设计理念。</p>
+<h2 id="内置常量"><a href="#内置常量" class="headerlink" title="内置常量"></a>内置常量</h2><p>Python 中常见的内置常量有：</p>
+<ul>
+<li><code>True</code>、<code>False</code>：布尔类型常量</li>
+<li><code>None</code>：表示空值</li>
+<li>数学常量（通过 <code>math</code> 模块）：<ul>
+<li><code>math.pi</code>：π ≈ 3.14159</li>
+<li><code>math.e</code>：自然对数底 ≈ 2.71828</li>
+<li><code>math.tau</code>：τ ≈ 6.28318</li>
+<li><code>math.inf</code>：正无穷大</li>
+</ul>
+</li>
+</ul>
+<p>这些常数在数学运算和逻辑判断中非常常用，也大大提升了表达力。</p>
+<h2 id="算术运算符和整除"><a href="#算术运算符和整除" class="headerlink" title="算术运算符和整除"></a>算术运算符和整除</h2><p>Python 支持多种运算符，包括：</p>
+<ul>
+<li>算术运算：<code>+ - * / // % **</code></li>
+<li>比较运算：<code>&lt; &lt;= == != &gt;= &gt;</code></li>
+<li>赋值运算：<code>+= -= *= //= %= **=</code></li>
+<li>逻辑运算：<code>and or not</code></li>
+</ul>
+<p>特别需要注意：</p>
+<ul>
+<li><code>/</code> 表示浮点除法，结果为浮点数</li>
+<li><code>//</code> 表示整除，会舍弃小数部分</li>
+<li><code>%</code> 表示取余</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">5</span> / <span class="number">3</span>)   <span class="comment"># 1.666...</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> // <span class="number">3</span>)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(-<span class="number">4</span> // <span class="number">3</span>) <span class="comment"># -2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> % <span class="number">3</span>)   <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+
+<p>还学习了自定义的模运算实现方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">mod</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a - (a // b) * b</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符优先级与结合律"><a href="#运算符优先级与结合律" class="headerlink" title="运算符优先级与结合律"></a>运算符优先级与结合律</h2><p>本章强调了表达式中不同运算符的优先级，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">2</span> + <span class="number">3</span> * <span class="number">4</span>)    <span class="comment"># 14，而不是 20</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span> ** <span class="number">3</span> ** <span class="number">2</span>)  <span class="comment"># 262144，而不是 4096</span></span><br></pre></td></tr></table></figure>
+
+<p>此外，Python 中运算符具有结合律（如从左到右或从右到左），这些都对表达式求值结果有重要影响。</p>
+<h2 id="类型影响运算语义"><a href="#类型影响运算语义" class="headerlink" title="类型影响运算语义"></a>类型影响运算语义</h2><p>相同的运算符在不同类型之间的运算行为可能不同：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">3</span> * <span class="number">2</span>)         <span class="comment"># 6（数值乘法）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span> * <span class="string">&quot;abc&quot;</span>)     <span class="comment"># abcabcabc（字符串重复）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span> + <span class="string">&quot;You&quot;</span>)  <span class="comment"># HiYou（字符串拼接）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="浮点数误差"><a href="#浮点数误差" class="headerlink" title="浮点数误差"></a>浮点数误差</h2><p>本章还介绍了浮点数的误差问题，这是由底层二进制表示方式决定的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">0.1</span> + <span class="number">0.1</span> + <span class="number">0.1</span> == <span class="number">0.3</span>)  <span class="comment"># False</span></span><br><span class="line"><span class="built_in">print</span>((<span class="number">0.1</span> + <span class="number">0.1</span> + <span class="number">0.1</span>) - <span class="number">0.3</span>) <span class="comment"># 5.551115123125783e-17（非常小的误差）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="短路求值"><a href="#短路求值" class="headerlink" title="短路求值"></a>短路求值</h2><p>逻辑运算中会触发“短路求值”机制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">yes</span>(): <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">no</span>(): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">crash</span>(): <span class="keyword">return</span> <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(no() <span class="keyword">and</span> crash())  <span class="comment"># 不会报错，因为 no() 为 False</span></span><br><span class="line"><span class="built_in">print</span>(yes() <span class="keyword">or</span> crash())  <span class="comment"># 不会报错，因为 yes() 为 True</span></span><br></pre></td></tr></table></figure>
+
+<p>这对于控制逻辑流程、避免错误非常有帮助。</p>
+<h2 id="type-vs-isinstance"><a href="#type-vs-isinstance" class="headerlink" title="type() vs isinstance()"></a>type() vs isinstance()</h2><p><code>type()</code> 用于判断数据类型，但更推荐使用 <code>isinstance()</code> 来判断一个对象是否属于某个类或其子类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numbers</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">isNumber</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">isinstance</span>(x, numbers.Number)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1</span>))       <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1.1</span>))     <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="number">1</span>+<span class="number">2j</span>))    <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(isNumber(<span class="string">&quot;text&quot;</span>))  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过本章学习，我掌握了 Python 常见的数据类型与内置运算符，理解了它们的行为及差异。在今后的编程中，我将更加注意：</p>
+<ul>
+<li>使用正确的类型与运算符组合</li>
+<li>利用 <code>isinstance()</code> 实现更健壮的类型判断</li>
+<li>理解表达式求值的过程与短路机制</li>
+<li>留意浮点数计算的精度问题</li>
+</ul>
+<p>这为我编写更高效、可靠的 Python 程序奠定了坚实的基础。</p>
+
       
     </div>
 
@@ -1057,87 +1408,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/25/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Su Tang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="_010001SUTANG_">
-      <meta itemprop="description" content="nothing is anything">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | _010001SUTANG_">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/06/25/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-06-25 13:46:44" itemprop="dateCreated datePublished" datetime="2025-06-25T13:46:44+08:00">2025-06-25</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
