@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -157,6 +157,218 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/14/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%881%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/14/%E8%81%AA%E6%98%8E%E5%AD%A6python%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">【Python】 第一章学习心得</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-07-14 00:00:00 / Modified: 23:39:07" itemprop="dateCreated datePublished" datetime="2025-07-14T00:00:00+08:00">2025-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">学习心得</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>《聪明办法学 Python（第2版）》第一章学习心得：启航 Getting Started</p>
+<p>通过学习《聪明办法学 Python（第2版）》第一章“启航 Getting Started”，我对 Python 编程有了初步而系统的认识，对编程的兴趣也愈发浓厚。</p>
+<p>第一印象：C 语言 vs Python</p>
+<p>教程开篇通过对比 C 语言和 Python 的 “Hello, World” 程序，让我立刻感受到了两者在语法层面的差异：</p>
+<ul>
+<li><p>C 语言版本：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, World\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python 版本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;聪明办法学 Python&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>这种简洁、自然的写法让我深刻体会到 Python 的“易读易写”哲学，对于初学者而言，学习曲线更为平缓，也激发了我进一步学习的动力。</p>
+<h2 id="注释的作用与写法"><a href="#注释的作用与写法" class="headerlink" title="注释的作用与写法"></a>注释的作用与写法</h2><p>教程强调了注释对于代码可读性的重要性，并引用了一句幽默的话：</p>
+<blockquote>
+<p>“当初写这段代码的时候，只有上帝和我知道它是干嘛的；现在只有上帝知道。”</p>
+</blockquote>
+<p>这让我意识到良好的注释不仅是对他人负责，也是在为未来的自己埋下伏笔。Python 中常见的注释方式包括：</p>
+<ul>
+<li>单行注释：<code>#</code></li>
+<li>多行注释：<code>&#39;&#39;&#39; 多行内容 &#39;&#39;&#39;</code> 或 <code>\&quot;\&quot;\&quot; 多行内容 \&quot;\&quot;\&quot;</code></li>
+</ul>
+<p>在实际编程中，适当的注释能够大大提升代码的可维护性和团队协作效率。</p>
+<h2 id="控制台输入输出的灵活性"><a href="#控制台输入输出的灵活性" class="headerlink" title="控制台输入输出的灵活性"></a>控制台输入输出的灵活性</h2><p><code>print()</code> 函数在 Python 中的强大表现令人印象深刻。通过一些简单的参数设置，可以灵活控制输出格式：</p>
+<ul>
+<li><code>end</code> 参数：改变输出后的结尾字符  </li>
+<li><code>sep</code> 参数：定义多个值之间的分隔符  </li>
+<li>字符串操作：使用 <code>+</code> 拼接、<code>*</code> 重复  </li>
+<li>f-string 格式化输出：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;我正在学习<span class="subst">&#123;name&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>此外，<code>input()</code> 函数使程序具备了与用户交互的能力。虽然输入默认是字符串类型，但可以通过 <code>int()</code>、<code>float()</code> 等函数进行类型转换，从而处理数字输入。</p>
+<h2 id="错误类型与模块导入"><a href="#错误类型与模块导入" class="headerlink" title="错误类型与模块导入"></a>错误类型与模块导入</h2><p>本章还介绍了三类常见错误：</p>
+<ul>
+<li><strong>语法错误</strong>：程序结构不符合语法规范</li>
+<li><strong>运行时错误</strong>：程序执行过程中触发，如除以零</li>
+<li><strong>逻辑错误</strong>：程序能运行但结果不符合预期</li>
+</ul>
+<p>了解这些错误类型，有助于我在今后的编程中更高效地定位和修复问题。</p>
+<p>模块导入的概念也让我初步认识到了 Python 的强大生态系统。例如，使用 <code>import math</code> 并调用 <code>math.factorial(5)</code> 来计算阶乘，这不仅丰富了编程功能，也让我对未来学习和使用各种第三方库充满期待。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过第一章的学习，我初步掌握了 Python 的基本语法、注释、输入输出、错误类型识别与模块导入等核心概念。Python 的简洁与强大让我倍感亲切，也为后续深入学习奠定了坚实的基础。</p>
+<blockquote>
+<p>“好的开始是成功的一半”，这一章无疑让我在学习编程的路上迈出了扎实的第一步。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Su Tang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_010001SUTANG_">
+      <meta itemprop="description" content="nothing is anything">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | _010001SUTANG_">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">博客搭建记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-06-25 20:00:00" itemprop="dateCreated datePublished" datetime="2025-06-25T20:00:00+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-07-14 23:06:43" itemprop="dateModified" datetime="2025-07-14T23:06:43+08:00">2025-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>博客搭建记录（EN）</p>
+<p>Under the patient guidance of seniors and driven by course requirements, I successfully completed the journey of building my personal blog using GitHub and Hexo, publishing my first blog post. The entire process was filled with exploration and rewarding experiences:</p>
+<p>During the preliminary preparation phase, I strictly followed the workflow: First, I downloaded and installed Node.js (verified by entering <code>node -v</code> and <code>npm -v</code> in the terminal), followed by installing Git (checked with <code>git --version</code>). These two tools formed the foundation for Hexo’s operation and code management. Next, I registered an account on GitHub’s official website with the username <code>[your GitHub username]</code>, laying the groundwork for my blog’s online home.</p>
+<p><strong>In the local blog construction phase</strong>, I created a dedicated directory on my hard drive (e.g., <code>D:\my-blog</code>), globally installed Hexo via the command line (<code>npm install -g hexo-cli</code>), and confirmed the installation with <code>hexo -v</code>. After initializing the project with <code>hexo init</code>, seeing the default “Hello World” page at <code>http://localhost:4000</code> sparked indescribable excitement! I then proceeded to personalize the configuration: opening the <code>_config.yml</code> file in a text editor, modifying <code>title</code> to my blog’s name, <code>subtitle</code> to a personalized tagline, and <code>author</code> to my pen name. After carefully comparing themes on Hexo’s official site, I finally cloned my preferred theme (e.g., <code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code>) and updated the <code>theme</code> value in the configuration file.</p>
+<p><strong>During the content creation phase</strong>, I used <code>hexo new &quot;My First Blog&quot;</code> to generate a Markdown file in <code>source/_posts</code>, edited the content with Typora, and previewed the layout in real-time using <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>. Markdown’s simple syntax allowed me to focus purely on writing without formatting distractions.</p>
+<p> <strong>The deployment phase was critical</strong>: I created a public repository named <code>[username].github.io</code> on GitHub, then configured SSH keys in Git Bash—generating a key pair with <code>ssh-keygen</code> and adding the full content of <code>id_rsa.pub</code> to my GitHub account’s SSH settings. Next, I modified the <code>deploy</code> section in Hexo’s configuration file, setting the repository URL to SSH format (<code>git@github.com:[username]/[username].github.io.git</code>) and the branch to <code>main</code>. When I ran <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code> to complete deployment and saw my live blog at <code>https://[username].github.io</code>, the fatigue from debugging melted into pure accomplishment!</p>
+<p>This practice not only equipped me with static blog-building skills but also deepened my appreciation for continuous output—just as seniors emphasized: <em>“A blog’s vitality comes from its relentless flow of content.”</em> Moving forward, I will persist in documenting technical insights and growth milestones, nurturing this self-built knowledge corner to thrive.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
